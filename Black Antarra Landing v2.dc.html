@@ -240,7 +240,7 @@
   </sc-if>
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props="{&quot;heroContactButton&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;},&quot;stickyHeader&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;}}">
+<script type="text/x-dc" data-dc-script data-props="{&quot;heroContactButton&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;},&quot;stickyHeader&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;}}">
 const I18N = {
   et: { morePhotosFb: "Rohkem fotosid Facebookis", showLess: "Peida fotod", fbH: "Meie Facebook", fbIntro: "Värskeimad uudised otse meie Facebooki lehelt — uued postitused ilmuvad siia automaatselt.", fbBtn: "Ava Facebookis", myContacts: "Edasi", cattery: "Siiami ja idamaise kassi kasvandus",
     nav: { meist: 'Meist', kassid: 'Kassid', galerii: 'Galerii', kontaktid: 'Kontaktid' },
@@ -443,7 +443,7 @@ class Component extends DCLogic {
     const t = I18N[lang] || I18N.et;
     const Btn = DS.Button;
     const btn = (props, label) => Btn ? h(Btn, props, label) : null;
-    const showContact = this.props.heroContactButton ?? true;
+    const showContact = this.props.heroContactButton ?? false;
     const links = ['meist', 'kassid', 'galerii', 'kontaktid'].map(id => ({ id, label: t.nav[id] }));
     const catSlides = DS.FeaturedCat ? CATS.map(c => h(DS.FeaturedCat, {
       key: c.id + lang, name: c.name, breed: ({ ru: ['Ориентальный', 'Сиамский'], et: ['Idamaine', 'Siiami'], en: ['Oriental', 'Siamese'] }[lang] || [])[c.breed] || t.breeds[c.breed].name, photo: c.photo, alt: c.name, text: c.id !== 'benya' ? c.text[lang] : c.text ? (() => { const tx = c.text[lang]; const nm = { et: 'Benjamin', en: 'Benjamin', ru: 'Бенджамин' }[lang]; const k = tx.indexOf(nm); return k < 0 ? tx : h(React.Fragment, null, tx.slice(0, k), h('strong', null, nm), tx.slice(k + nm.length)); })() : undefined, focus: c.focus,
