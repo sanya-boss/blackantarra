@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/black-antarra-design-system-1f78a416-c19d-47da-af39-d2a295e6cbe0/tokens/fonts.css">
+  <link rel="stylesheet" href="_ds/black-antarra-design-system-1f78a416-c19d-47da-af39-d2a295e6cbe0/tokens/colors.css">
+  <link rel="stylesheet" href="_ds/black-antarra-design-system-1f78a416-c19d-47da-af39-d2a295e6cbe0/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/black-antarra-design-system-1f78a416-c19d-47da-af39-d2a295e6cbe0/tokens/spacing.css">
+  <link rel="stylesheet" href="_ds/black-antarra-design-system-1f78a416-c19d-47da-af39-d2a295e6cbe0/tokens/effects.css">
+  <link rel="stylesheet" href="_ds/black-antarra-design-system-1f78a416-c19d-47da-af39-d2a295e6cbe0/tokens/base.css">
+  <link rel="stylesheet" href="_ds/black-antarra-design-system-1f78a416-c19d-47da-af39-d2a295e6cbe0/components/core/core.css">
+  <link rel="stylesheet" href="_ds/black-antarra-design-system-1f78a416-c19d-47da-af39-d2a295e6cbe0/components/brand/brand.css">
+  <link rel="stylesheet" href="_ds/black-antarra-design-system-1f78a416-c19d-47da-af39-d2a295e6cbe0/components/navigation/navigation.css">
+  <link rel="stylesheet" href="_ds/black-antarra-design-system-1f78a416-c19d-47da-af39-d2a295e6cbe0/components/media/media.css">
+  <link rel="stylesheet" href="_ds/black-antarra-design-system-1f78a416-c19d-47da-af39-d2a295e6cbe0/components/cards/cards.css">
+  <link rel="stylesheet" href="_ds/black-antarra-design-system-1f78a416-c19d-47da-af39-d2a295e6cbe0/components/contact/contact.css">
+  <link rel="stylesheet" href="_ds/black-antarra-design-system-1f78a416-c19d-47da-af39-d2a295e6cbe0/components/forms/forms.css">
+  <link rel="stylesheet" href="_ds/black-antarra-design-system-1f78a416-c19d-47da-af39-d2a295e6cbe0/components/content/content.css">
+  <link rel="stylesheet" href="_ds/black-antarra-design-system-1f78a416-c19d-47da-af39-d2a295e6cbe0/styles.css">
+  <script src="_ds/black-antarra-design-system-1f78a416-c19d-47da-af39-d2a295e6cbe0/_ds_bundle.js"></script>
+  <meta name="description" content="Black Antarra — orientaalsete ja siiami kasside kodukassila Eestis. Kasvataja Tatjana Raisp. Tõud, meie kassid, galerii ja kontaktid.">
+  <meta name="theme-color" content="#F7F8F8">
+  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="assets/icons/icon-512.png">
+  <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Black Antarra">
+  <meta property="og:title" content="Black Antarra — Siamese &amp; Oriental Cattery">
+  <meta property="og:description" content="Orientaalsete ja siiami kasside kassila Eestis. Kasvataja Tatjana Raisp.">
+  <meta property="og:image" content="assets/icons/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="et_EE">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:locale:alternate" content="ru_RU">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Black Antarra","description":"Siamese & Oriental Cattery","url":"https://www.antarra.ee/","telephone":"+372 5809 4779","email":"info@antarra.ee","image":"assets/icons/og-image.png","founder":{"@type":"Person","name":"Tatjana Raisp"},"address":{"@type":"PostalAddress","addressCountry":"EE"},"geo":{"@type":"GeoCoordinates","latitude":58.938942,"longitude":24.891805}}</script>
+  <title>Black Antarra — Siamese &amp; Oriental Cattery</title>
+  <style>html{scroll-padding-top:80px;scroll-behavior:smooth}.ba-photo.is-loading>img{opacity:1!important}.ba-photo>img{position:relative;z-index:1}#galerii .ba-gallery__footer{display:none!important}#top{overflow-x:clip}#kassid .ba-slider__viewport{touch-action:pan-x pan-y;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain;cursor:grab;user-select:none;-webkit-user-select:none}#kassid .ba-slider__viewport img{-webkit-user-drag:none;pointer-events:none}#kassid .ba-slider__viewport.is-dragging{cursor:grabbing;scroll-behavior:auto}#kassid .ba-slider__viewport.is-dragging .ba-slider__slide{opacity:1!important;transition:none}#kassid .ba-slider{min-width:0;max-width:100%}#kassid .ba-slider__controls{min-width:0}#kassid .ba-slider__dots{flex:1 1 auto;min-width:0;max-width:420px}#kassid .ba-slider__dot{flex:1 1 0;width:auto;max-width:28px;min-width:0}#kassid .ba-featured__body{min-width:0;overflow-wrap:anywhere}.ba-lightbox{height:100svh;overflow:hidden}.ba-lightbox__stage{overflow:hidden}.ba-lightbox__stage img{width:auto!important;height:auto!important;max-width:min(100%,86vw)!important;max-height:min(78svh,calc(100svh - 170px))!important;object-fit:contain;border-radius:var(--radius-md,10px);box-shadow:0 20px 60px rgba(0,0,0,.35)}#kassid .ba-slider__viewport{scroll-behavior:auto}#kassid .ba-slider__slide{transition:opacity 360ms cubic-bezier(.2,0,0,1)}@media (hover:hover) and (pointer:fine){#kassid .ba-slider__slide[aria-hidden="true"]{opacity:0}}#kassid .ba-slider__dot::before{transition:none}.ba-header .ba-logo{transition:opacity 500ms cubic-bezier(.2,0,0,1);cursor:pointer}@media (max-width:899px){html:not([data-hero-passed="1"]) .ba-header .ba-logo{opacity:0;pointer-events:none}}.ba-footer .ba-logo,.ba-footer .ba-logo img{cursor:pointer}#kontaktid .ba-map{position:relative;isolation:isolate}#kontaktid .ba-map iframe{filter:grayscale(1) contrast(1.18) brightness(1.04)}#kontaktid .ba-map::after{content:"";position:absolute;inset:0;background:#6F93B3;mix-blend-mode:color;pointer-events:none;border-radius:inherit}.ba-header .ba-logo__name,.ba-header .ba-logo__sub{display:none!important}.ba-header .ba-logo::before{content:"";display:block;width:clamp(150px,14vw,190px);aspect-ratio:235.47/46.2;background:url(assets/logo/ba-logotype.svg) no-repeat left center/contain}@keyframes ba-cat-rise{0%{transform:translateY(42%);opacity:0}35%{opacity:1}100%{transform:translateY(0);opacity:1}}@keyframes ba-cat-breathe{0%,100%{transform:rotate(0deg)}25%{transform:rotate(1.4deg)}75%{transform:rotate(-1.4deg)}}[data-comment-anchor="baa22b662d-img"]{transform-origin:60% 100%;animation:ba-cat-rise 1.1s cubic-bezier(.22,1,.36,1) .15s both,ba-cat-breathe 5.5s ease-in-out 1.4s infinite}@media (prefers-reduced-motion:reduce){[data-comment-anchor="baa22b662d-img"]{animation:none}}@media (min-width:768px) and (max-width:1279px){[data-comment-anchor="baa22b662d-img"]{margin-left:-90px}}@keyframes ba-cat-sway-sm{0%,100%{transform:rotate(0deg)}25%{transform:rotate(.6deg)}75%{transform:rotate(-.6deg)}}#top[data-screen-label="Hero mobile"] img[src*="ba-logo-blue"]{transform-origin:55% 100%;animation:ba-cat-rise 1.1s cubic-bezier(.22,1,.36,1) .15s both,ba-cat-sway-sm 5.5s ease-in-out 1.4s infinite}@media (prefers-reduced-motion:reduce){#top[data-screen-label="Hero mobile"] img[src*="ba-logo-blue"]{animation:none}}@media (min-width:900px){.ba-header{box-shadow:none!important;border:0!important;border-bottom:1px solid var(--ba-mist-300)!important}}@media (max-width:899px){.ba-header,.ba-header__inner{box-shadow:none!important;border:0!important}}.hero-meta{position:relative}.hero-meta::before{content:"";position:absolute;left:-16px;right:-16px;top:10px;bottom:-14px;border-radius:14px;background:var(--ba-blue-300);opacity:0;transition:opacity 260ms cubic-bezier(.2,0,0,1);pointer-events:none}.hero-meta>div{position:relative}.hero-meta>div *{transition:color 260ms cubic-bezier(.2,0,0,1)}.hero-meta[data-hl="1"]::before{opacity:1}.hero-meta[data-hl="1"]>div *{color:#fff!important}body{margin:0;background:var(--bg-canvas)}.ba-slider__count{display:none!important}.ba-footer__brand .ba-logo img{height:clamp(150px,14vw,200px)!important;width:auto!important;max-width:100%}@media (min-width:900px){.ba-footer__brand{align-self:end}.ba-footer__brand .ba-logo{display:block;line-height:0}}a{color:var(--ba-blue-600)}a:hover{color:var(--ba-blue-800)}</style>
+</helmet>
+<div lang="{{ lang }}" style="background: var(--bg-canvas); color: var(--text-primary); min-height: 100vh;">
+  <x-import component-from-global-scope="BlackAntarraDesignSystem_1f78a4.SiteHeader" links="{{ links }}" lang="{{ lang }}" on-lang-change="{{ setLang }}" on-navigate="{{ navigate }}" social="{{ social }}" phone="+372 5809 4779" email="info@antarra.ee" sticky="{{ sticky }}" menu-label="{{ t.menu }}" close-label="{{ t.close }}" hint-size="100%,72px"></x-import>
+  <main>
+    <sc-if value="{{ isDesktop }}" hint-placeholder-val="{{ true }}">
+    <section id="top" data-screen-label="Hero" style="padding: clamp(40px,4.5vw,80px) 0 clamp(24px,2.5vw,40px);">
+      <div style="max-width: var(--container-max); margin: 0 auto; padding: 0 var(--gutter); display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: clamp(40px,5vw,80px); align-items: center;">
+        <div style="display: grid; grid-template-columns: minmax(0, 1fr); gap: clamp(20px,2.4vw,32px); align-content: center; min-width: 0; max-width: 620px;">
+        <p style="margin: 0; display: flex; align-items: center; gap: 12px; font-family: var(--font-ui); font-weight: 600; font-size: var(--fs-label); line-height: 1.3; letter-spacing: .14em; text-transform: uppercase; color: var(--text-accent);"><span style="width: 32px; height: 1.5px; background: currentColor; flex: none;"></span>{{ t.cattery }}</p>
+        <h1 style="margin: 0; font-family: var(--font-display); font-style: italic; font-weight: 700; font-size: min(var(--fs-display), 5vw); min-width: 0; line-height: {{ heroLH }}; letter-spacing: -.01em; color: var(--text-primary); text-wrap: balance; overflow-wrap: anywhere; hyphens: auto">{{ heroTitleNode }}</h1>
+        
+        <p style="margin: 0; max-width: 46ch; font-family: var(--font-ui); font-size: var(--fs-lead); line-height: 1.6; color: var(--text-secondary); text-wrap: pretty;">{{ heroLeadNode }}</p><div style="display: flex; flex-wrap: wrap; gap: 12px;">
+          <x-import component-from-global-scope="BlackAntarraDesignSystem_1f78a4.Button" size="l" icon="arrow-right" on-click="{{ goCats }}" hint-size="220px,52px">{{ t.meet }}</x-import>
+          <sc-if value="{{ showHeroContact }}" hint-placeholder-val="{{ true }}">
+            <span onMouseEnter="{{ hlOn }}" onMouseLeave="{{ hlOff }}" onFocus="{{ hlOn }}" onBlur="{{ hlOff }}" style="display: inline-flex;"><x-import component-from-global-scope="BlackAntarraDesignSystem_1f78a4.Button" size="l" variant="secondary" on-click="{{ goContact }}" hint-size="180px,52px">{{ t.contact }}</x-import></span>
+          </sc-if>
+        </div>
+        <dl class="hero-meta" data-hl="{{ metaHl }}" style="margin: 8px 0 0; padding-top: 24px; border-top: 1px solid var(--border-default); display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 150px), 1fr)); gap: 16px 24px; max-width: 620px; min-width: 0;">
+          <div style="display: grid; gap: 4px;">
+            <dt style="font-family: var(--font-ui); font-weight: 600; font-size: var(--fs-micro); letter-spacing: .12em; text-transform: uppercase; color: var(--text-secondary);">{{ t.meta.breeder }}</dt>
+            <dd style="margin: 0; font-family: var(--font-ui); font-weight: 600; font-size: var(--fs-body); color: var(--text-primary);">Tatjana Raisp</dd>
+          </div>
+          <div style="display: grid; gap: 4px;">
+            <dt style="font-family: var(--font-ui); font-weight: 600; font-size: var(--fs-micro); letter-spacing: .12em; text-transform: uppercase; color: var(--text-secondary);">{{ t.meta.phone }}</dt>
+            <dd style="margin: 0; font-family: var(--font-ui); font-weight: 600; font-size: var(--fs-body);"><a href="tel:+37258094779" style="color: var(--text-link); text-decoration: none;" style-hover="color: var(--text-link-hover); text-decoration: underline;">+372 5809 4779</a></dd>
+          </div>
+          <div style="display: grid; gap: 4px;">
+            <dt style="font-family: var(--font-ui); font-weight: 600; font-size: var(--fs-micro); letter-spacing: .12em; text-transform: uppercase; color: var(--text-secondary);">{{ t.meta.email }}</dt>
+            <dd style="margin: 0; font-family: var(--font-ui); font-weight: 600; font-size: var(--fs-body);"><a href="mailto:info@antarra.ee" style="color: var(--text-link); text-decoration: none;" style-hover="color: var(--text-link-hover); text-decoration: underline;">info@antarra.ee</a></dd>
+          </div>
+        </dl>
+      </div>
+        <div style="position: relative; aspect-ratio: 1 / 1.3; width: 100%; max-width: min(600px, calc((100vh - 140px) / 1.3)); justify-self: end; min-width: 0;">
+          <div style="position: absolute; inset: 42% 6% 0 6%; background: var(--bg-brand-soft); border-radius: var(--radius-xl);"></div>
+          <div style="position: absolute; inset: 0; clip-path: inset(-10% 6% 0 6% round var(--radius-xl));">
+            <img src="assets/logo/ba-logo-blue.svg" alt="" width="332" height="276" style="position: absolute; width: 916px; max-width: none; height: 881px; display: block; left: -390px; top: -58px">
+          </div>
+          <div style="position: absolute; left: calc(6% + clamp(12px,2vw,24px)); bottom: clamp(12px,2vw,24px); display: grid; gap: 6px; padding: 16px 20px; background: rgba(255,255,255,.72); backdrop-filter: blur(12px) saturate(1.1); -webkit-backdrop-filter: blur(12px) saturate(1.1); border: 1px solid rgba(255,255,255,.6); border-radius: var(--radius-lg); box-shadow: var(--shadow-card); max-width: calc(88% - 24px);">
+            <span style="font-family: var(--font-ui); font-weight: 600; font-size: var(--fs-micro); letter-spacing: .12em; text-transform: uppercase; color: var(--text-accent);">{{ t.breedsH }}</span>
+            <span style="font-family: var(--font-display); font-style: italic; font-weight: 500; font-size: var(--fs-h3); line-height: var(--lh-h3); color: var(--text-primary);">{{ breedNames }}</span>
+          </div>
+        </div>
+      </div>
+    </section>
+    </sc-if>
+    <sc-if value="{{ isMobile }}" hint-placeholder-val="{{ false }}">
+    <section id="top" data-screen-label="Hero mobile" style="padding: 0 0 48px;">
+      <div style="position: relative; min-height: max(620px, calc(100svh - 72px)); overflow: hidden; display: flex; flex-direction: column; justify-content: flex-end; padding: 0 var(--gutter) 16px;">
+        <img src="assets/logo/ba-logo-blue.svg" alt="" width="332" height="276" style="position: absolute; top: 12px; left: calc(50% - 180px); translate: -52% 0; width: 869px; max-width: none; height: 699px; display: block; pointer-events: none">
+        <div style="position: absolute; left: 0; right: 0; bottom: 0; height: 90px; background: linear-gradient(to bottom, rgba(247,248,248,0), var(--bg-canvas)); pointer-events: none;"></div>
+        <div style="position: relative; display: grid; gap: 20px; padding: 22px 20px 20px; overflow: hidden;  box-shadow: var(--shadow-card); background: linear-gradient(to bottom, rgba(255,255,255,.22) 0%, rgba(255,255,255,.55) 45%, #fff 72%); backdrop-filter: blur(5px); -webkit-backdrop-filter: blur(5px); border: 1px solid rgba(255,255,255,.6); border-radius: var(--radius-xl);">
+          <div onClick="{{ toggleHero }}" role="button" aria-expanded="{{ heroOpenAttr }}" aria-controls="hero-more" aria-label="{{ heroToggleLabel }}" style="display: grid; gap: 6px; justify-items: center; text-align: center; cursor: pointer;">
+            <span style="margin-bottom: 12px; display: grid; place-items: center; color: var(--ba-blue-600);"><span style="display: grid; place-items: center; transform: {{ heroArrowTransform }}; transition: transform var(--dur-base) var(--ease-standard);"><x-import component-from-global-scope="BlackAntarraDesignSystem_1f78a4.Icon" name="chevron-down" size="{{ 22 }}" hint-size="22px,22px"></x-import></span></span>
+            <img loading="lazy" decoding="async" src="assets/logo/ba-logotype.svg" alt="Black Antarra — Siamese &amp; Oriental Cattery" width="235" height="46" style="position: relative; justify-self: start; left: {{ heroTxtLeft }}; transform: translateX({{ heroTxtShift }}); transition: left 1100ms cubic-bezier(.45,0,.2,1), transform 1100ms cubic-bezier(.45,0,.2,1); display: block; width: min(270px, 74vw); max-width: 100%; height: auto;">
+          </div>
+          <div id="hero-more" style="display: grid; grid-template-rows: {{ heroRows }}; opacity: {{ heroOpacity }}; margin: -20px -20px -20px; transition: grid-template-rows 1100ms cubic-bezier(.45,0,.2,1), opacity 900ms cubic-bezier(.45,0,.2,1) 150ms;">
+            <div style="overflow: hidden; min-height: 0;">
+              <div style="display: grid; gap: 20px; padding: 20px 20px 0;">
+          <h1 style="margin: 0; font-family: var(--font-display); font-style: italic; font-weight: 700; font-size: clamp(2.25rem, 10vw, 2.875rem); line-height: 1.02; letter-spacing: -.015em; color: var(--text-primary); text-wrap: balance; overflow-wrap: anywhere; hyphens: auto;">{{ t.hero.a }} <span style="color: var(--ba-blue-300);">{{ t.hero.b }}</span></h1>
+          <p style="margin: 0; font-family: var(--font-ui); font-size: var(--fs-body); line-height: 1.6; color: var(--text-primary); text-wrap: pretty;">{{ heroLeadNode }}</p>
+          <a href="#kassid" onClick="{{ goCatsLink }}" style="display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 52px; padding: 0 6px 0 20px; border-radius: var(--radius-pill); background: var(--ba-ink-900); color: #fff; text-decoration: none; font-family: var(--font-ui); font-weight: 700; font-size: var(--fs-body);" style-active="transform: translateY(1px);">
+            <span>{{ t.meet }}</span>
+            <span style="width: 40px; height: 40px; display: grid; place-items: center; border-radius: var(--radius-pill); background: rgba(255,255,255,.14);"><x-import component-from-global-scope="BlackAntarraDesignSystem_1f78a4.Icon" name="arrow-right" size="{{ 20 }}" hint-size="20px,20px"></x-import></span>
+          </a>
+              </div>
+            </div>
+          </div>
+          <div style="display: grid; margin: {{ heroMetaGap }} -20px -20px; transition: margin-top 1100ms cubic-bezier(.45,0,.2,1); border-top: 1px solid var(--border-default);">
+          <div style="display: grid; gap: 2px; padding: 16px 20px; border-bottom: 1px solid var(--border-default);">
+            <span style="font-family: var(--font-ui); font-weight: 600; font-size: var(--fs-micro); letter-spacing: .12em; text-transform: uppercase; color: var(--text-secondary);">{{ t.meta.breeder }}</span>
+            <span style="font-family: var(--font-display); font-style: italic; font-weight: 500; font-size: 1.25rem; color: var(--text-primary);">Tatjana Raisp</span>
+          </div>
+          <a href="tel:+37258094779" style="display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 56px; padding: 0 20px; text-decoration: none; font-family: var(--font-ui); font-weight: 600; font-size: var(--fs-body); color: var(--text-link); border-bottom: 1px solid var(--border-default);" style-active="background: var(--bg-subtle);">
+            <span style="display: flex; align-items: center; gap: 12px;"><x-import component-from-global-scope="BlackAntarraDesignSystem_1f78a4.Icon" name="phone" size="{{ 20 }}" hint-size="20px,20px"></x-import>+372 5809 4779</span>
+            <x-import component-from-global-scope="BlackAntarraDesignSystem_1f78a4.Icon" name="chevron-right" size="{{ 18 }}" hint-size="18px,18px"></x-import>
+          </a>
+          <a href="mailto:info@antarra.ee" style="display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 56px; padding: 0 20px; text-decoration: none; font-family: var(--font-ui); font-weight: 600; font-size: var(--fs-body); color: var(--text-link);" style-active="background: var(--bg-subtle);">
+            <span style="display: flex; align-items: center; gap: 12px;"><x-import component-from-global-scope="BlackAntarraDesignSystem_1f78a4.Icon" name="mail" size="{{ 20 }}" hint-size="20px,20px"></x-import>info@antarra.ee</span>
+            <x-import component-from-global-scope="BlackAntarraDesignSystem_1f78a4.Icon" name="chevron-right" size="{{ 18 }}" hint-size="18px,18px"></x-import>
+          </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    </sc-if>
+    
+
+    <section id="meist" style="padding: clamp(16px,2vw,32px) 0 var(--section-y-tight);">
+      <div style="max-width: var(--container-max); margin: 0 auto; padding: 0 var(--gutter); display: grid; gap: clamp(28px,3vw,48px);">
+        <x-import component-from-global-scope="BlackAntarraDesignSystem_1f78a4.BreederCard" eyebrow="{{ t.breeder.eyebrow }}" paragraphs="{{ breederParas }}" photo="assets/photos/3132-6263-4438-b161-333531373635.webp" alt="Tatjana Raisp" focus="45% 30%" hint-size="100%,480px"></x-import>
+      </div>
+    </section>
+
+    <section id="toud" style="padding: 0 0 var(--section-y-tight);">
+      <div style="max-width: var(--container-max); margin: 0 auto; padding: 0 var(--gutter); display: grid; gap: clamp(28px,3vw,48px);">
+        <x-import component-from-global-scope="BlackAntarraDesignSystem_1f78a4.SectionHeading" title="{{ t.breedsH }}" intro="{{ t.breedsIntro }}" hint-size="100%,90px"></x-import>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit,minmax(min(100%,340px),1fr)); gap: var(--grid-gap); align-items: start;">
+          <sc-for list="{{ breeds }}" as="b" hint-placeholder-count="2">
+            <div style="padding-top: {{ b.offset }};"><x-import component-from-global-scope="BlackAntarraDesignSystem_1f78a4.BreedCard" eyebrow="{{ t.breedEyebrow }}" name="{{ b.name }}" text="{{ b.text }}" traits="{{ b.traits }}" alt="{{ b.name }}" photo="{{ b.photo }}" focus="50% 22%" action="{{ b.action }}" hint-size="100%,560px"></x-import></div>
+          </sc-for>
+        </div>
+      </div>
+    </section>
+
+    <section id="kassid" style="padding: var(--section-y-tight) 0 var(--section-y); background: var(--bg-subtle);">
+      <div style="max-width: var(--container-max); margin: 0 auto; padding: 0 var(--gutter); display: grid; gap: clamp(28px,3vw,48px);">
+        <div style="display: flex; flex-wrap: wrap; gap: 20px; align-items: end; justify-content: space-between;">
+          <x-import component-from-global-scope="BlackAntarraDesignSystem_1f78a4.SectionHeading" title="{{ t.catsH }}" intro="{{ t.catsIntro }}" hint-size="320px,90px"></x-import>
+          <x-import component-from-global-scope="BlackAntarraDesignSystem_1f78a4.Button" variant="text" icon="arrow-right" href="{{ facebookUrl }}" hint-size="auto,44px">{{ t.otherCats }}</x-import>
+        </div><x-import component-from-global-scope="BlackAntarraDesignSystem_1f78a4.Slider" label="{{ t.catsH }}" prev-label="{{ t.prev }}" next-label="{{ t.next }}" dc-props="{{ sliderProps }}" hint-size="100%,520px"></x-import>
+        
+      </div>
+    </section>
+
+    <section id="omadused" style="padding: var(--section-y) 0;">
+      <div style="max-width: var(--container-max); margin: 0 auto; padding: 0 var(--gutter); display: grid; gap: clamp(28px,3vw,48px);">
+        <x-import component-from-global-scope="BlackAntarraDesignSystem_1f78a4.SectionHeading" align="center" title="{{ t.advH }}" intro="{{ t.advIntro }}" hint-size="100%,90px"></x-import>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit,minmax(min(100%,240px),1fr)); gap: clamp(32px,4vw,48px);">
+          <sc-for list="{{ advantages }}" as="a" hint-placeholder-count="3">
+            <x-import component-from-global-scope="BlackAntarraDesignSystem_1f78a4.AdvantageCard" illustration="{{ a.img }}" title="{{ a.title }}" text="{{ a.text }}" hint-size="100%,320px"></x-import>
+          </sc-for>
+        </div>
+      </div>
+    </section>
+
+    <section id="tingimused" style="padding: 0 0 var(--section-y-tight);">
+      <div style="max-width: var(--container-max); margin: 0 auto; padding: 0 var(--gutter);">
+        <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px 40px; padding: var(--card-pad); background: var(--bg-subtle); border-radius: var(--radius-card);">
+          <div style="display: grid; gap: 8px; max-width: 60ch; min-width: 0;">
+            <h2 style="margin: 0; font-family: var(--font-display); font-style: italic; font-weight: 500; font-size: var(--fs-h3); line-height: var(--lh-h3); color: var(--text-primary);">{{ t.terms }}</h2>
+            <p style="margin: 0; font-family: var(--font-ui); font-size: var(--fs-body); line-height: 1.6; color: var(--text-secondary); text-wrap: pretty;">{{ t.termsText }}</p>
+          </div>
+          <x-import component-from-global-scope="BlackAntarraDesignSystem_1f78a4.Button" variant="secondary" icon="arrow-right" on-click="{{ openTerms }}" hint-size="200px,48px">{{ t.termsBtn }}</x-import>
+        </div>
+      </div>
+    </section>
+
+    <section id="galerii" style="padding: 0 0 var(--section-y-tight);">
+      <div style="max-width: var(--container-wide); margin: 0 auto; padding: 0 var(--gutter); display: grid; gap: clamp(28px,3vw,48px);">
+        <x-import component-from-global-scope="BlackAntarraDesignSystem_1f78a4.SectionHeading" title="{{ t.galleryH }}" hint-size="100%,60px"></x-import>
+        <x-import component-from-global-scope="BlackAntarraDesignSystem_1f78a4.Gallery" images="{{ galleryVisible }}" page-size="{{ 999 }}" has-more="{{ galleryHasMore }}" on-load-more="{{ galleryMore }}" more-label="{{ t.showMore }}" end-label="{{ t.allShown }}" lightbox-labels="{{ lightboxLabels }}" hint-size="100%,640px"></x-import>
+        <sc-if value="{{ galleryAllShown }}" hint-placeholder-val="{{ false }}">
+          <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 24px; padding-top: 8px; border-top: 1px solid var(--border-default);">
+            <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px;">
+              <span style="font-family: var(--font-ui); font-size: var(--fs-small); color: var(--text-secondary);">{{ t.allShown }}</span>
+              <x-import component-from-global-scope="BlackAntarraDesignSystem_1f78a4.Button" variant="secondary" size="m" icon="chevron-up" on-click="{{ galleryLess }}" hint-size="170px,44px">{{ t.showLess }}</x-import>
+            </div>
+            <x-import component-from-global-scope="BlackAntarraDesignSystem_1f78a4.Button" size="m" icon="facebook" href="https://www.facebook.com/Blackantarra" target="_blank" hint-size="260px,44px">{{ t.morePhotosFb }}</x-import>
+          </div>
+        </sc-if>
+        <sc-if value="{{ galleryPartial }}" hint-placeholder-val="{{ true }}">
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 12px;">
+          <sc-if value="{{ galleryHasMore }}" hint-placeholder-val="{{ true }}">
+            <x-import component-from-global-scope="BlackAntarraDesignSystem_1f78a4.Button" variant="secondary" size="m" on-click="{{ galleryMore }}" hint-size="170px,44px">{{ t.showMore }}</x-import>
+          </sc-if>
+          <sc-if value="{{ galleryExpanded }}" hint-placeholder-val="{{ false }}">
+            <x-import component-from-global-scope="BlackAntarraDesignSystem_1f78a4.Button" variant="secondary" size="m" icon="chevron-up" on-click="{{ galleryLess }}" hint-size="170px,44px">{{ t.showLess }}</x-import>
+          </sc-if>
+        </div>
+        </sc-if>
+      </div>
+    </section>
+
+    <section id="uudised" data-screen-label="Facebook" style="padding: var(--section-y-tight) 0;">
+      <div style="max-width: var(--container-max); margin: 0 auto; padding: 0 var(--gutter); display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap: clamp(28px,4vw,72px); align-items: center;">
+        <div style="display: grid; gap: 20px; align-content: center; max-width: 520px;">
+          <x-import component-from-global-scope="BlackAntarraDesignSystem_1f78a4.SectionHeading" title="{{ t.fbH }}" intro="{{ t.fbIntro }}" hint-size="100%,120px"></x-import>
+          <div style="display: flex; flex-wrap: wrap; gap: 12px;">
+            <x-import component-from-global-scope="BlackAntarraDesignSystem_1f78a4.Button" icon="arrow-right" href="https://www.facebook.com/Blackantarra" hint-size="220px,52px">{{ t.fbBtn }}</x-import>
+          </div>
+        </div>
+        <div style="justify-self: center; width: 100%; max-width: 500px; border-radius: var(--radius-card); overflow: hidden; background: #fff; box-shadow: var(--shadow-card); line-height: 0;">
+          <iframe src="{{ fbSrc }}" title="Black Antarra — Facebook" loading="lazy" width="500" height="700" style="display: block; width: 100%; max-width: 500px; height: 700px; border: 0; overflow: hidden; background: #fff;" scrolling="no" allowfullscreen="true" allow="encrypted-media; clipboard-write; picture-in-picture; web-share"></iframe>
+        </div>
+      </div>
+    </section>
+
+    <section id="partnerid" style="padding: var(--section-y-tight) 0;">
+      <div style="max-width: var(--container-max); margin: 0 auto; padding: 0 var(--gutter); display: grid; gap: clamp(28px,3vw,48px);">
+        <x-import component-from-global-scope="BlackAntarraDesignSystem_1f78a4.SectionHeading" align="center" title="{{ t.partnersH }}" intro="{{ t.partnersIntro }}" hint-size="100%,90px"></x-import>
+        <x-import component-from-global-scope="BlackAntarraDesignSystem_1f78a4.PartnerGrid" partners="{{ partners }}" hint-size="100%,140px"></x-import>
+      </div>
+    </section>
+
+    <section id="kontaktid" style="padding: var(--section-y) 0; background: var(--bg-surface);">
+      <div style="max-width: var(--container-max); margin: 0 auto; padding: 0 var(--gutter); display: grid; gap: clamp(28px,3vw,48px);">
+        <x-import component-from-global-scope="BlackAntarraDesignSystem_1f78a4.ContactBlock" map-src="{{ mapSrc }}" map-title="Black Antarra — Google Maps" title="{{ contactTitle }}" phone="+372 5809 4779" email="info@antarra.ee" person="Tatjana Raisp" person-role="{{ t.role }}" social="{{ social }}" map-fallback-title="{{ t.mapT }}" map-fallback-text="{{ t.mapText }}" hint-size="100%,480px"></x-import>
+      </div>
+    </section>
+  </main>
+  <x-import component-from-global-scope="BlackAntarraDesignSystem_1f78a4.SiteFooter" logo-src="assets/logo/black-antarra-lockup.png" links="{{ links }}" contacts="{{ contacts }}" social="{{ social }}" terms-label="{{ t.terms }}" on-terms="{{ openTerms }}" nav-heading="{{ t.menuH }}" contact-heading="{{ t.contactH }}" credit="{{ credit }}" hint-size="100%,280px"></x-import>
+  <sc-if value="{{ termsOpen }}" hint-placeholder-val="{{ false }}">
+    <x-import component-from-global-scope="BlackAntarraDesignSystem_1f78a4.Dialog" title="{{ t.terms }}" close-label="{{ t.close }}" on-close="{{ closeTerms }}" footer="{{ termsFooter }}" hint-size="0,0">{{ termsBody }}</x-import>
+  </sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;heroContactButton&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;},&quot;stickyHeader&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;}}">
+const I18N = {
+  et: { morePhotosFb: "Rohkem fotosid Facebookis", showLess: "Peida fotod", fbH: "Meie Facebook", fbIntro: "Värskeimad uudised otse meie Facebooki lehelt — uued postitused ilmuvad siia automaatselt.", fbBtn: "Ava Facebookis", myContacts: "Edasi", cattery: "Siiami ja idamaise kassi kasvandus",
+    nav: { meist: 'Meist', kassid: 'Kassid', galerii: 'Galerii', kontaktid: 'Kontaktid' },
+    menu: 'Menüü', close: 'Sulge', more: 'Loe lähemalt', meet: 'Vaata meie kasse', contact: 'Võta ühendust', showMore: 'Näita rohkem', allShown: 'Kõik fotod on kuvatud', prev: 'Eelmine', next: 'Järgmine', terms: 'Kassipoja ostutingimused', menuH: 'Menüü', contactH: 'Kontakt',
+    hero: { a: 'Kasside elegants,', b: 'kasvatatud kodus.', lead: 'Black Antarra on kassikasvatus Eestis. Kasvatame Idamaiseid ja Siiami kasse, kes sirguvad pere keskel — ja tutvume iga tulevase omanikuga isiklikult.' },
+    meta: { breeder: 'Kasvataja', phone: 'Telefon', email: 'E-post' },
+    breedsIntro: 'Kaks lähedast tõugu — sama sihvakas kehaehitus, erinev värvus.',
+    termsText: 'Kolimise vanus, dokumendid, vaktsineerimine, broneerimine ja leping — kõik ühes kohas.', termsBtn: 'Loe tingimusi',
+    breeder: { eyebrow: 'Kasvataja', p: ['Tere, minu nimi on Tatjana. Paljude aastate jooksul olen leidnud oma kutsumuse kassikasvatuses.', 'Black Antarra on kassikasvatus, kus iga kass kasvab pere keskel. Täname teid huvi eest.'] },
+    breedsH: 'Tõud', breedEyebrow: 'Tõug',
+    breeds: [
+      { name: 'Idamaised', text: 'Graatsilise keha, suurte kõrvade ja ilmekate silmadega kassitõug. Lühike karv erinevates värvides. Aktiivsed, seltskondlikud ja energilised.', traits: ['Suured kõrvad', 'Pikk kael', 'Aktiivne'] },
+      { name: 'Siiami', text: 'Sihvakas keha ja iseloomulikud värvipunktid näol, kõrvadel, käppadel ja sabal. Lühike sile karv, silmad tavaliselt sinised ja väga väljendusrikkad.', traits: ['Värvipunktid', 'Sinised silmad', 'Jutukas'] },
+    ],
+    catsH: 'Meie kassid', catsIntro: 'Iga kass on omanäoline — tutvuge lähemalt.', otherCats: 'Teised kassid Facebookis',
+    advH: 'Omadused, mille üle oleme uhked', advIntro: 'Mida me teeme parimal võimalikul viisil.',
+    adv: [['Kõrgeim kvaliteet', 'Tõupuhtad kassid ja hoolikalt valitud vanemad.'], ['Professionaalne hooldus', 'Kogenud kasvatamine ja sotsialiseerimine sõbralikuks käitumiseks.'], ['Isikupärane lähenemine', 'Abi valikul ja hooldamisel, kohandatud teie eelistustele.']],
+    galleryH: 'Galerii', newsH: 'Meie uudised', newsEmptyT: 'Uudiseid veel pole', newsEmpty: 'Uued teated ilmuvad siia. Seni jälgige meid Facebookis.',
+    partnersH: 'Meie partnerid', partnersIntro: 'Kui olete huvitatud partneriks või sponsoriks hakkamisest, võtke meiega julgelt ühendust.',
+    contactT: ['Kas otsite sõpra?', 'Võtke meiega ühendust!'], role: 'kasvataja', mapT: 'Eesti', mapText: 'Täpne asukoht lepitakse kokku telefoni teel.',
+    termsLead: 'Tingimused kantakse üle omaniku kinnitatud tekstist muutmata kujul.', catPh: 'Foto',
+  },
+  en: { morePhotosFb: "More photos on Facebook", showLess: "Hide photos", fbH: "On Facebook", fbIntro: "The latest news straight from our Facebook page — new posts appear here automatically.", fbBtn: "Open on Facebook", myContacts: "Next", cattery: "Siamese & Oriental Cattery",
+    nav: { meist: 'About us', kassid: 'Our cats', galerii: 'Gallery', kontaktid: 'Contact' },
+    menu: 'Menu', close: 'Close', more: 'Learn more', meet: 'Meet our cats', contact: 'Get in touch', showMore: 'Show more', allShown: 'All photos shown', prev: 'Previous', next: 'Next', terms: 'Kitten purchase terms', menuH: 'Menu', contactH: 'Contact',
+    hero: { a: 'Feline elegance,', b: 'raised at home.', lead: 'Black Antarra is a cattery in Estonia. We raise Oriental and Siamese cats as part of the family — and get to know every future owner personally.' },
+    meta: { breeder: 'Breeder', phone: 'Phone', email: 'Email' },
+    breedsIntro: 'Two closely related breeds — the same slender build, different coats.',
+    termsText: 'Move-in age, documents, vaccination, reservation and contract — all in one place.', termsBtn: 'Read the terms',
+    breeder: { eyebrow: 'Breeder', p: ['Hello, my name is Tatjana. Over many years I have found my calling in breeding cats.', 'Black Antarra is a cattery where every cat grows up as part of the family. Thank you for your interest.'] },
+    breedsH: 'Breeds', breedEyebrow: 'Breed',
+    breeds: [
+      { name: 'Oriental', text: 'A graceful breed with large ears and expressive eyes. Short coat in many colours. Active, sociable and full of energy.', traits: ['Large ears', 'Long neck', 'Active'] },
+      { name: 'Siamese', text: 'A slender body with characteristic colour points on the face, ears, paws and tail. Short, sleek coat; eyes usually blue and very expressive.', traits: ['Colour points', 'Blue eyes', 'Talkative'] },
+    ],
+    catsH: 'Our cats', catsIntro: 'Every cat is an individual — get to know them.', otherCats: 'More cats on Facebook',
+    advH: 'What we take pride in', advIntro: 'What we do in the best possible way.',
+    adv: [['Highest quality', 'Purebred cats and carefully chosen parents.'], ['Professional care', 'Experienced breeding and socialisation for a friendly temperament.'], ['Personal approach', 'Help with choosing and care, tailored to you.']],
+    galleryH: 'Gallery', newsH: 'Our news', newsEmptyT: 'No news yet', newsEmpty: 'New posts will appear here. Meanwhile, follow us on Facebook.',
+    partnersH: 'Our partners', partnersIntro: 'If you would like to become a partner or sponsor, please get in touch.',
+    contactT: ['Looking for a friend?', 'Get in touch!'], role: 'breeder', mapT: 'Estonia', mapText: 'The exact location is arranged by phone.',
+    termsLead: 'The terms are transferred unchanged from the owner-approved text.', catPh: 'Photo',
+  },
+  ru: { morePhotosFb: "Больше фотографий в Facebook", showLess: "Свернуть фото", fbH: "Мы в Facebook", fbIntro: "Свежие новости прямо с нашей страницы в Facebook — новые посты появляются здесь автоматически.", fbBtn: "Открыть в Facebook", myContacts: "Далее", cattery: "Питомник сиамских и ориентальных кошек",
+    nav: { meist: 'О питомнике', kassid: 'Наши кошки', galerii: 'Галерея', kontaktid: 'Контакты' },
+    menu: 'Меню', close: 'Закрыть', more: 'Подробнее', meet: 'Посмотреть кошек', contact: 'Связаться', showMore: 'Показать ещё', allShown: 'Показаны все фото', prev: 'Назад', next: 'Вперёд', terms: 'Условия приобретения котёнка', menuH: 'Меню', contactH: 'Контакты',
+    hero: { a: 'Кошачья элегантность,', b: 'воспитанная дома.', lead: 'Black Antarra — кошачий питомник в Эстонии. Мы растим ориентальных и сиамских кошек в семье и лично знакомимся с каждым будущим владельцем.' },
+    meta: { breeder: 'Заводчик', phone: 'Телефон', email: 'E-mail' },
+    breedsIntro: 'Две родственные породы — одинаково стройное сложение, разный окрас.',
+    termsText: 'Возраст переезда, документы, вакцинация, бронирование и договор — всё в одном месте.', termsBtn: 'Читать условия',
+    breeder: { eyebrow: 'Заводчик', p: ['Здравствуйте, меня зовут Татьяна. За многие годы я нашла своё призвание в разведении кошек.', 'Black Antarra — кошачий питомник, где каждая кошка растёт в семье. Спасибо за интерес.'] },
+    breedsH: 'Породы', breedEyebrow: 'Порода',
+    breeds: [
+      { name: 'Ориентальные', text: 'Грациозная порода с большими ушами и выразительными глазами. Короткая шерсть разных окрасов. Активные, общительные и энергичные.', traits: ['Большие уши', 'Длинная шея', 'Активные'] },
+      { name: 'Сиамские', text: 'Стройное тело и характерные цветовые отметины на мордочке, ушах, лапах и хвосте. Короткая гладкая шерсть, глаза обычно голубые и очень выразительные.', traits: ['Колор-пойнт', 'Голубые глаза', 'Разговорчивые'] },
+    ],
+    catsH: 'Наши кошки', catsIntro: 'Каждая кошка — индивидуальность. Познакомьтесь ближе.', otherCats: 'Другие кошки в Facebook',
+    advH: 'Чем мы гордимся', advIntro: 'То, что мы делаем наилучшим образом.',
+    adv: [['Высокое качество', 'Породистые кошки и тщательно подобранные родители.'], ['Профессиональный уход', 'Опытное выращивание и социализация для дружелюбного характера.'], ['Индивидуальный подход', 'Помощь в выборе и уходе с учётом ваших пожеланий.']],
+    galleryH: 'Галерея', newsH: 'Наши новости', newsEmptyT: 'Новостей пока нет', newsEmpty: 'Новые записи появятся здесь. А пока следите за нами в Facebook.',
+    partnersH: 'Наши партнёры', partnersIntro: 'Если вы хотите стать партнёром или спонсором, свяжитесь с нами.',
+    contactT: ['Ищете друга?', 'Свяжитесь с нами!'], role: 'заводчик', mapT: 'Эстония', mapText: 'Точное место встречи согласуем по телефону.',
+    termsLead: 'Условия переносятся без изменений из утверждённого владельцем текста.', catPh: 'Фото',
+  },
+};
+const CATS = [
+  { id: 'benya', name: "Benya", breed: 0, focus: '50% 30%', photo: 'assets/photos/6362-6634-4938-a132-633163633565.webp', text: { et: 'Benjamin on kassikasvatuse tõeline staar. Sihvakas figuur, läbistavad rohelised silmad ja graatsilised liigutused.', en: 'Benjamin is the true star of the cattery. A slender figure, piercing green eyes and graceful movement.', ru: 'Бенджамин — настоящая звезда питомника. Стройная фигура, пронзительные зелёные глаза и грациозные движения.' } },
+  { id: 'enigma', name: "Enigma", breed: 0, focus: '50% 30%', photo: 'assets/photos/3137-3364-4461-a537-393961353561.webp', text: { et: "Enigma on kütkestav kontrastide segu, mille pool tema mantlist ja näost on süsimustas elegantsis ja teine pool ürgses lumivalges puhtuses.", en: "Enigma is a captivating blend of contrasts: half of her coat and face is coal-black elegance, the other half pristine snow-white.", ru: "Энигма — завораживающее сочетание контрастов: половина её шубки и мордочки — угольно-чёрная элегантность, другая — первозданная белоснежная чистота." } },
+  { id: 'hattori', name: "Hattori Hanzo", breed: 0, focus: '50% 30%', photo: 'assets/photos/3832-3337-4330-b166-663936326131.webp', text: { et: "Sellel idamaisel kassil on silmatorkav must ninatäpp ja iseloomulik kahevärviline karv. Esiosa on puhas valge, tagaosa aga rikkalikult must, luues visuaalselt kütkestava kontrasti.", en: "This Oriental cat has a striking black nose spot and a distinctive bicolour coat: pure white in front, rich black behind — a captivating contrast.", ru: "У этого ориентального кота яркое чёрное пятнышко на носу и характерный двухцветный окрас: спереди чисто белый, сзади насыщенно чёрный — завораживающий контраст." } },
+  { id: 'giuseppe', name: "Giuseppe", breed: 0, focus: '50% 30%', photo: 'assets/photos/3636-3937-4632-a465-643839653534.webp', text: { et: "Giuseppe kehastab elegantsi ja mõistatust. Tema süsimusta mantel sarnaneb öö sügavusele, heites vastupandamatut salapära.", en: "Giuseppe embodies elegance and mystery. His coal-black coat resembles the depth of night, casting an irresistible air of mystery.", ru: "Джузеппе — воплощение элегантности и загадки. Его угольно-чёрная шубка похожа на глубину ночи и окутывает неотразимой таинственностью." } },
+  { id: 'akacja', name: "Akacja", breed: 1, focus: '22% 30%', photo: 'assets/photos/3733-3436-4066-b066-643835306135.webp', text: { et: "Akacjast õhkub graatsilisust ja võlu. Tema kreemjas siiami mantel, mida kaunistavad karamelli ja õrnad beežid, loob pildi õrnast elegantsist.", en: "Akacja radiates grace and charm. Her creamy Siamese coat with hints of caramel and soft beige paints a picture of delicate elegance.", ru: "Акация излучает грацию и очарование. Её кремовая сиамская шубка с карамельными и нежно-бежевыми оттенками создаёт образ утончённой элегантности." } },
+  { id: 'graffiti', name: "Graffiti", breed: 0, focus: '50% 30%', photo: 'assets/photos/3033-3033-4237-a565-343661633431.webp', text: { et: "Graffiti köitvaim omadus on tema ilmekad, rõõmuga täidetud rohelised silmad, mis kiirgavad intelligentsust ja õnne.", en: "Graffiti’s most captivating feature is her expressive green eyes, full of joy and radiating intelligence and happiness.", ru: "Самая притягательная черта Граффити — выразительные зелёные глаза, полные радости, излучающие ум и счастье." } },
+  { id: 'caramel', name: "Caramel", breed: 0, focus: '50% 30%', photo: 'assets/photos/3039-3838-4563-b739-666264393634.webp', text: { et: "Hommiku kehastus kasside seas. Tema pehme hall karv meenutab hommikust udu. Karamelli silmad on nagu kaks eredat päikest, mis kiirgavad alati soojust ja rõõmu.", en: "The embodiment of morning among cats. Her soft grey coat recalls the morning mist, and her eyes shine like two bright suns, always radiating warmth and joy.", ru: "Воплощение утра среди кошек. Её мягкая серая шерсть напоминает утренний туман, а глаза — как два ярких солнца, всегда излучающие тепло и радость." } },
+  { id: 'ice', name: "Ice", breed: 0, focus: '50% 30%', photo: 'assets/photos/6330-3234-4432-b937-363864363539.webp', text: { et: "Tõeline valge karvaga kaunitar, kaunistatud mustade laikudega, nagu tähed öötaevas. Tema saba, nagu pildiraam, on värvitud sügavmustaks.", en: "A true white-coated beauty adorned with black spots like stars in the night sky. Her tail, like a picture frame, is painted deep black.", ru: "Настоящая белоснежная красавица с чёрными пятнышками, словно звёзды в ночном небе. Её хвост, как рамка картины, окрашен в глубокий чёрный." } },
+  { id: 'kristoff', name: "Kristoff", breed: 0, focus: '50% 30%', photo: 'assets/photos/3231-3661-4432-b232-623231616362.webp', text: { et: "Öö kehastus kasside seas. Tema paks, täiesti must karv paistab olevat pimedusega kaetud. Kristoffi rohelised silmad näivad alati salapäraselt kaugusest midagi tabavat.", en: "The embodiment of night among cats. His thick, all-black coat seems cloaked in darkness, and his green eyes always seem to catch something mysterious in the distance.", ru: "Воплощение ночи среди кошек. Его густая, полностью чёрная шерсть словно окутана темнотой, а зелёные глаза будто всегда ловят что-то таинственное вдали." } },
+  { id: 'ufne', name: "Ufne Koty", breed: 0, focus: '50% 30%', photo: 'assets/photos/3536-3135-4664-b666-623164306366.webp', text: { et: "Siidine, harjataoline karv koos ilmekate kõrvade ja mandlikujuliste silmadega annab talle salapärase, peaaegu teatraalse välimuse.", en: "A silky coat, expressive ears and almond-shaped eyes give her a mysterious, almost theatrical look.", ru: "Шелковистая шерсть, выразительные уши и миндалевидные глаза придают ей загадочный, почти театральный облик." } },
+  { id: 'milky', name: "Milky", breed: 0, focus: '50% 30%', photo: 'assets/photos/3361-3134-4962-a637-383236363639.webp', text: { et: "Näo, kõrvade ja saba mustad aktsendid lisavad pildile pikantse individuaalsuse ja võlu. Milky on rafineeritus mängulise säraga, õrnus kunstipärase puudutusega.", en: "Black accents on her face, ears and tail add a piquant individuality and charm. Milky is refinement with a playful sparkle, tenderness with an artistic touch.", ru: "Чёрные акценты на мордочке, ушах и хвосте придают ей пикантную индивидуальность и шарм. Милки — утончённость с игривой искоркой, нежность с художественным штрихом." } },
+  { id: 'melissa', name: "Melissa", breed: 0, focus: '50% 30%', photo: 'assets/photos/6362-3234-4637-b137-626664643239.webp', text: { et: "Melissa on ekspressiivsuse ja sisemise jõu kehastus. Tema sile, öökarva karv, mida täiendavad lumivalged detailid, näib rõhutavat tema sihikindlat ja enesekindlat iseloomu.", en: "Melissa embodies expressiveness and inner strength. Her sleek night-black coat with snow-white details seems to underline her determined, confident character.", ru: "Мелисса — воплощение выразительности и внутренней силы. Гладкая шерсть цвета ночи с белоснежными деталями словно подчёркивает её целеустремлённый и уверенный характер." } },
+  { id: 'marsel', name: "Marsel", breed: 0, focus: '50% 30%', photo: 'assets/photos/6463-6135-4339-b232-633734373662.webp', text: { et: "Marsel on rahuliku enesekindluse ja rafineeritud väärikuse kehastus. Tema sametine must karv neelab valgust, luues salapära ja võimu aura.", en: "Marsel embodies calm confidence and refined dignity. His velvety black coat absorbs the light, creating an aura of mystery and strength.", ru: "Марсель — воплощение спокойной уверенности и утончённого достоинства. Его бархатная чёрная шерсть поглощает свет, создавая ауру загадочности и силы." } },
+  { id: 'peter', name: "Peter Pan", breed: 0, focus: '50% 30%', photo: 'assets/photos/3530-3739-4233-b161-393738643537.webp', text: { et: "Peter on mängulise vaimu ja igavese nooruse kehastus. Tema südaöömust karv läigib liikudes, peegeldades tema tabamatut loomust.", en: "Peter embodies a playful spirit and eternal youth. His midnight-black coat gleams as he moves, reflecting his elusive nature.", ru: "Питер — воплощение игривого духа и вечной молодости. Его шерсть цвета полуночи блестит в движении, отражая его неуловимый нрав." } },
+];
+const GALLERY = ["assets/photos/6463-3665-4233-a437-393235653135.webp","assets/photos/6431-3862-4465-b335-356330353264.webp","assets/photos/3666-6262-4165-a636-636335373466.webp","assets/photos/6432-3265-4136-a230-343732646333.webp","assets/photos/6535-3532-4133-a631-353561383031.webp","assets/photos/3238-6531-4166-a265-323330336131.webp","assets/photos/3433-3265-4933-a532-306539306362.webp","assets/photos/3263-3230-4031-b438-376466336463.webp","assets/photos/3630-3637-4166-b237-633331303435.webp","assets/photos/6539-3439-4661-a434-346435303832.webp","assets/photos/3462-3265-4966-b066-383663336662.webp","assets/photos/3130-6537-4630-b063-653566313063.webp","assets/photos/3964-3863-4361-b964-316661643634.webp","assets/photos/3039-6337-4636-b032-613964386565.webp","assets/photos/3061-6331-4234-b034-383163663962.webp","assets/photos/3131-3930-4565-b430-326538303132.webp","assets/photos/3761-6138-4664-b130-663737313932.webp","assets/photos/3830-3539-4338-a233-313137376430.webp","assets/photos/6638-3238-4532-a466-616332356264.webp","assets/photos/3631-3664-4530-a637-353461636561.webp","assets/photos/3532-3961-4432-b532-393932313135.webp","assets/photos/3835-3563-4234-b637-366364333463.webp","assets/photos/3637-3664-4532-b534-303264353238.webp","assets/photos/6433-3662-4831-a437-366235383864.webp","assets/photos/3736-3933-4162-b538-393836366230.webp","assets/photos/3637-6138-4433-b432-653165366630.webp","assets/photos/3534-3664-4835-b038-343033626538.webp","assets/photos/6330-3834-4230-b561-653338623364.webp","assets/photos/3165-3338-4265-b535-326631653437.webp","assets/photos/3265-3030-4936-b930-636362633138.webp","assets/photos/3331-6663-4139-b461-303863303861.webp","assets/photos/6163-3530-4538-b966-396531393065.webp","assets/photos/6364-3833-4234-b333-336264326533.webp","assets/photos/3862-3430-4135-b938-386631353966.webp","assets/photos/6461-3839-4862-a265-363138363763.webp","assets/photos/3837-3630-4366-b535-376238363730.webp","assets/photos/6239-6536-4333-b732-353933363263.webp","assets/photos/6236-6232-4664-b032-323063343064.webp"];
+const SOCIAL = [{ icon: 'facebook', href: 'https://www.facebook.com/Blackantarra', label: 'Facebook' }, { icon: 'whatsapp', href: 'https://wa.me/37258094779', label: 'WhatsApp' }];
+
+const TERMS_RU = {
+  motto: 'Котята — живые существа.',
+  greeting: 'Дорогие будущие владельцы наших малышей,',
+  intro: 'Мы призываем вас подходить к выбору котенка с особым вниманием и заботой. В нашем питомнике мы не предоставляем котят в аренду на несколько дней для проверки на аллергии или другие заболевания у ваших членов семьи.',
+  sections: [
+    { h: 'Переезд и документация', items: ['Котята переезжают в новый дом не ранее 15-16 недель.', 'Предоставляется полный пакет документов, включая родословную и ветеринарный паспорт.'] },
+    { h: 'Здоровье и уход', items: ['Наши котята проходят вакцинацию и глистогонку.', 'Они приучены к лотку и знакомы с когтеточкой для комфорта в новом доме.', 'Котята стерилизованы/кастрированы, за исключением случаев продажи для разведения.'] },
+    { h: 'Бронирование и оплата', items: ['Для бронирования котенка требуется предоплата в размере 50% от его стоимости.', 'Оставшиеся 50% оплачиваются за несколько дней до отправки котенка в новый дом или при самовывозе.'] },
+    { h: 'Договор', items: ['Продажа котят строго осуществляется на основе договора.', 'После подписания договора котенок считается забронированным и снимается с продажи.'] },
+    { h: 'Ответственность', items: ['Мы просим вас отнестись к приобретению котенка с максимальной ответственностью.', 'Котенок становится членом вашей семьи, и мы не предлагаем его в аренду.'] },
+    { h: 'Гарантии и возврат', items: ['Мы гарантируем здоровье котенка на момент передачи.', 'Если по какой-либо причине вы передумаете приобретать котенка после бронирования, предоплата не возвращается.', 'Питомник не несет ответственности за скрытые дефекты, которые проявляются в период развития.', 'Питомник возвращает предоплату, если покупка не может быть завершена по вине питомника.'] },
+  ],
+};
+class Component extends DCLogic {
+  state = { lang: (typeof localStorage !== 'undefined' && localStorage.getItem('ba-landing-lang')) || 'et', termsOpen: false, isMobile: typeof window !== 'undefined' && window.innerWidth < 900 };
+  heroPassed = () => { const el = document.getElementById('top'); const passed = el ? el.getBoundingClientRect().bottom < 80 : true; document.documentElement.dataset.heroPassed = passed ? '1' : '0'; };
+  onLogoClick = (e) => { const logo = e.target.closest && e.target.closest('.ba-header .ba-logo, .ba-footer .ba-logo, .ba-footer__brand img'); if (!logo) return; e.preventDefault(); if (this.sRaf) { cancelAnimationFrame(this.sRaf); this.sRaf = null; } this.sTarget = 0; this.animateTo(0); ({ top: 0, behavior: 'smooth' }); };
+  smoothLoop = () => {
+    const cur = window.scrollY, d = this.sTarget - cur;
+    if (Math.abs(d) < 0.6) { window.scrollTo({ top: this.sTarget, behavior: 'instant' }); this.sRaf = null; return; }
+    window.scrollTo({ top: cur + d * 0.1, behavior: 'instant' });
+    this.sRaf = requestAnimationFrame(this.smoothLoop);
+  };
+  onSmoothWheel = (e) => {
+    if (this.state.isMobile || this.state.termsOpen || e.ctrlKey || e.defaultPrevented) return;
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    if (e.target.closest && e.target.closest('[role="dialog"], .ba-dialog, .ba-lightbox')) return;
+    e.preventDefault();
+    const max = document.documentElement.scrollHeight - window.innerHeight;
+    if (!this.sRaf) this.sTarget = window.scrollY;
+    const dy = e.deltaY * (e.deltaMode === 1 ? 40 : e.deltaMode === 2 ? window.innerHeight : 1);
+    this.sTarget = Math.max(0, Math.min(max, this.sTarget + dy));
+    if (!this.sRaf) this.sRaf = requestAnimationFrame(this.smoothLoop);
+  };
+  onScroll = () => { this.heroPassed(); if (!this.state.isMobile) return; const y = window.scrollY; if (y > 24 && !this.state.heroOpen) this.setState({ heroOpen: true, heroByScroll: true }); else if (y <= 4 && this.state.heroOpen && this.state.heroByScroll) this.setState({ heroOpen: false, heroByScroll: false }); };
+  pullGate = (e, down) => {
+    if (!this.state.isMobile) return;
+    const now = Date.now();
+    if (this.lockUntil && now < this.lockUntil) { if (e.cancelable) e.preventDefault(); return; }
+    if (!this.state.heroOpen && down && window.scrollY <= 4) {
+      if (e.cancelable) e.preventDefault();
+      this.lockUntil = now + 1200;
+      this.setState({ heroOpen: true, heroByScroll: false });
+    }
+  };
+  onWheel = (e) => this.pullGate(e, e.deltaY > 0);
+  onDragStart = (e) => {
+    const vp = e.target.closest && e.target.closest('#kassid .ba-slider__viewport');
+    if (!vp || e.button > 0 || e.target.closest('button, a')) return;
+    this.drag = { vp, x: e.clientX, y: e.clientY, left: vp.scrollLeft, moved: false, id: e.pointerId, touch: e.pointerType !== 'mouse' };
+    if (this.drag.touch) return;
+    vp.classList.add('is-dragging'); vp.style.scrollSnapType = 'none';
+  };
+  onDragMove = (e) => {
+    const d = this.drag; if (!d || d.touch) return;
+    const dx = e.clientX - d.x; if (Math.abs(dx) > 4) d.moved = true;
+    d.vp.scrollLeft = d.left - dx; e.preventDefault();
+  };
+  onDragEnd = (e) => {
+    const d = this.drag; this.drag = null; if (!d || d.touch) return;
+    const vp = d.vp, w = vp.clientWidth, dx = e.clientX - d.x;
+    let k = Math.round(d.left / w); if (Math.abs(dx) > w * 0.12) k += dx < 0 ? 1 : -1;
+    const n = vp.children.length; k = Math.max(0, Math.min(n - 1, k));
+    vp.style.scrollSnapType = ''; vp.classList.remove('is-dragging');
+    vp.scrollTo({ left: k * w, behavior: 'smooth' });
+    if (d.moved) { const stop = (ev) => { ev.stopPropagation(); ev.preventDefault(); }; window.addEventListener('click', stop, { capture: true, once: true }); setTimeout(() => window.removeEventListener('click', stop, true), 50); }
+  };
+  onTouchStart = (e) => { this.touchY = e.touches[0].clientY; };
+  onTouchMove = (e) => { const y = e.touches[0].clientY; this.pullGate(e, this.touchY != null && this.touchY - y > 2); };
+  hlOn = () => this.setState({ metaHl: true });
+  hlOff = () => this.setState({ metaHl: false });
+  toggleHero = () => this.setState(s => ({ heroOpen: !s.heroOpen, heroByScroll: false }));
+  onResize = () => { const m = window.innerWidth < 900; if (m !== this.state.isMobile) this.setState({ isMobile: m }); };
+  componentWillUnmount() { window.removeEventListener('resize', this.onResize); window.removeEventListener('scroll', this.onScroll); document.removeEventListener('pointerdown', this.onDragStart); window.removeEventListener('pointermove', this.onDragMove); window.removeEventListener('pointerup', this.onDragEnd); window.removeEventListener('pointercancel', this.onDragEnd); document.removeEventListener('click', this.onLogoClick, true); window.removeEventListener('wheel', this.onWheel); window.removeEventListener('wheel', this.onSmoothWheel); if (this.sRaf) cancelAnimationFrame(this.sRaf); window.removeEventListener('touchstart', this.onTouchStart); window.removeEventListener('touchmove', this.onTouchMove); }
+  setLang = (lang) => { this.setState({ lang }); try { localStorage.setItem('ba-landing-lang', lang); document.documentElement.lang = lang; } catch (e) {} };
+  animateTo = (top) => {
+    if (this.sRaf) { cancelAnimationFrame(this.sRaf); this.sRaf = null; }
+    if (this.navRaf) cancelAnimationFrame(this.navRaf);
+    const root = document.documentElement, prev = root.style.scrollBehavior; root.style.scrollBehavior = 'auto';
+    const max = root.scrollHeight - window.innerHeight, end = Math.max(0, Math.min(max, top)), start = window.scrollY, dist = end - start;
+    const dur = Math.min(1100, 450 + Math.abs(dist) * 0.25), t0 = performance.now();
+    const ease = (x) => 1 - Math.pow(1 - x, 3);
+    const step = (now) => { const p = Math.min(1, (now - t0) / dur); window.scrollTo(0, start + dist * ease(p)); if (p < 1) this.navRaf = requestAnimationFrame(step); else { this.navRaf = null; this.sTarget = end; root.style.scrollBehavior = prev; } };
+    this.navRaf = requestAnimationFrame(step);
+  };
+  navigate = (id) => { const s = document.getElementById(id); if (!s) return; this.animateTo(s.getBoundingClientRect().top + window.scrollY - 72); };
+  applyMeta() {
+    const M = {"et":["Black Antarra — siiami ja orientaalsete kasside kassila","Black Antarra — orientaalsete ja siiami kasside kodukassila Eestis. Kasvataja Tatjana Raisp. Tõud, meie kassid, galerii ja kontaktid."],"en":["Black Antarra — Siamese & Oriental Cattery in Estonia","Black Antarra is a home cattery of Oriental and Siamese cats in Estonia, run by breeder Tatjana Raisp. Breeds, our cats, gallery and contact."],"ru":["Black Antarra — питомник сиамских и ориентальных кошек","Black Antarra — кошачий питомник ориентальных и сиамских кошек в Эстонии. Заводчик Татьяна Райсп. Породы, наши кошки, галерея и контакты."]};
+    const l = M[this.state.lang] ? this.state.lang : 'et';
+    document.documentElement.lang = l;
+    document.title = M[l][0];
+    const d = document.querySelector('meta[name="description"]'); if (d) d.setAttribute('content', M[l][1]);
+    const ot = document.querySelector('meta[property="og:title"]'); if (ot) ot.setAttribute('content', M[l][0]);
+  }
+  componentDidUpdate(pp, ps) { if (ps.lang !== this.state.lang) this.applyMeta(); }
+  componentDidMount() { this.applyMeta(); window.addEventListener('resize', this.onResize); window.addEventListener('scroll', this.onScroll, { passive: true }); document.addEventListener('pointerdown', this.onDragStart); window.addEventListener('pointermove', this.onDragMove, { passive: false }); window.addEventListener('pointerup', this.onDragEnd); window.addEventListener('pointercancel', this.onDragEnd); document.addEventListener('click', this.onLogoClick, true); this.heroPassed(); window.addEventListener('wheel', this.onWheel, { passive: false }); window.addEventListener('wheel', this.onSmoothWheel, { passive: false }); window.addEventListener('touchstart', this.onTouchStart, { passive: true }); window.addEventListener('touchmove', this.onTouchMove, { passive: false }); this.onResize(); }
+  renderVals() {
+    const DS = window.BlackAntarraDesignSystem_1f78a4 || {};
+    const h = React.createElement;
+    const { lang, termsOpen } = this.state;
+    const t = I18N[lang] || I18N.et;
+    const Btn = DS.Button;
+    const btn = (props, label) => Btn ? h(Btn, props, label) : null;
+    const showContact = this.props.heroContactButton ?? true;
+    const links = ['meist', 'kassid', 'galerii', 'kontaktid'].map(id => ({ id, label: t.nav[id] }));
+    const catSlides = DS.FeaturedCat ? CATS.map(c => h(DS.FeaturedCat, {
+      key: c.id + lang, name: c.name, breed: ({ ru: ['Ориентальный', 'Сиамский'], et: ['Idamaine', 'Siiami'], en: ['Oriental', 'Siamese'] }[lang] || [])[c.breed] || t.breeds[c.breed].name, photo: c.photo, alt: c.name, text: c.id !== 'benya' ? c.text[lang] : c.text ? (() => { const tx = c.text[lang]; const nm = { et: 'Benjamin', en: 'Benjamin', ru: 'Бенджамин' }[lang]; const k = tx.indexOf(nm); return k < 0 ? tx : h(React.Fragment, null, tx.slice(0, k), h('strong', null, nm), tx.slice(k + nm.length)); })() : undefined, focus: c.focus,
+      placeholder: `${t.catPh}: ${c.name}`,
+    })) : null;
+    const credit = React.createElement('a', { href: 'https://sanya-boss.github.io/cv.html', target: '_blank', rel: 'noopener', style: { color: 'inherit', textDecoration: 'none' } }, 'Mezhstroy Design');
+    return { credit,
+      lang, t, links, social: SOCIAL, setLang: this.setLang, navigate: this.navigate,
+      sticky: this.props.stickyHeader ?? true,
+      facebookUrl: SOCIAL[0].href,
+      heroTitleNode: h(React.Fragment, null, t.hero.a + ' ', h('span', { style: { color: 'var(--ba-blue-300)' } }, t.hero.b)),
+      heroLeadNode: (() => { const tx = t.hero.lead; const k = tx.indexOf('Black Antarra'); return k < 0 ? tx : h(React.Fragment, null, tx.slice(0, k), h('strong', { style: { fontWeight: 700, color: 'var(--text-primary)' } }, 'Black Antarra'), tx.slice(k + 13)); })(),
+      heroLH: lang === 'en' ? '1.06' : lang === 'et' ? '1.02' : '0.91',
+      hlOn: this.hlOn, hlOff: this.hlOff, metaHl: this.state.metaHl ? '1' : '0',
+      fbSrc: 'https://www.facebook.com/plugins/page.php?href=' + encodeURIComponent('https://www.facebook.com/Blackantarra') + '&tabs=timeline&width=500&height=700&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=false&lazy=true&locale=' + ({ et: 'et_EE', en: 'en_US', ru: 'ru_RU' }[lang]),
+      mapSrc: 'https://maps.google.com/maps?q=58.938942,24.891805&z=8&hl=' + lang + '&output=embed',
+      heroTxtLeft: this.state.heroOpen ? '0%' : '50%', heroTxtShift: this.state.heroOpen ? '0%' : '-50%',
+      heroMetaGap: this.state.heroOpen ? '18px' : '2px',
+      showHeroContact: showContact,
+      isMobile: this.state.isMobile, isDesktop: !this.state.isMobile,
+      toggleHero: this.toggleHero,
+      heroOpenAttr: this.state.heroOpen ? 'true' : 'false',
+      heroRows: this.state.heroOpen ? '1fr' : '0fr',
+      heroOpacity: this.state.heroOpen ? 1 : 0,
+      heroArrowTransform: this.state.heroOpen ? 'rotate(0deg)' : 'rotate(180deg)',
+      heroToggleLabel: ({ et: 'Näita tutvustust', en: 'Show introduction', ru: 'Показать описание' })[lang] || 'Show',
+      goCats: () => this.navigate('kassid'),
+      goCatsLink: (e) => { e.preventDefault(); this.navigate('kassid'); },
+      breedNamesShort: t.breeds.map(b => b.name).join(' · '),
+      goContact: () => this.navigate('kontaktid'),
+      breedNames: t.breeds.map(b => b.name).join(' · '),
+      meetAction: btn({ icon: 'arrow-right', onClick: () => this.navigate('toud') }, t.myContacts),
+      breederParas: t.breeder.p.map((p, k) => typeof p === 'string' && p.includes('Black Antarra') ? h(React.Fragment, { key: k }, ...p.split('Black Antarra').flatMap((part, j) => j ? [h('strong', { key: 'b' + j, style: { fontWeight: 700 } }, 'Black Antarra'), part] : [part])) : p),
+      moreAction: btn({ variant: 'secondary', size: 'm', icon: 'arrow-right', onClick: () => this.navigate('kassid') }, t.meet),
+      breeds: t.breeds.map((b, i) => ({ ...b, photo: ['assets/photos/3632-6339-4335-a233-636139303438.webp', 'assets/photos/3166-6335-4366-b066-303136303662.webp'][i], action: i === 0 ? null : btn({ variant: 'secondary', size: 'm', icon: 'arrow-right', onClick: () => this.navigate('kassid') }, t.meet), offset: (i % 2 && !this.state.isMobile) ? 'clamp(40px,7vw,112px)' : '0px' })),
+      sliderProps: { children: catSlides },
+      advantages: t.adv.map(([title, text], k) => ({ title, text, img: `assets/illustrations/advantage-cat-${k + 1}.png` })),
+      gallery: GALLERY.map((src, k) => ({ src, alt: `Black Antarra — ${t.catPh} ${k + 1}`, placeholder: `${t.galleryH} ${k + 1}`, format: ['large', null, 'tall', null, 'wide', null, null][k % 7] })),
+      galleryPage: 7,
+      galleryVisible: GALLERY.map((src, k) => ({ src, alt: `Black Antarra — ${t.catPh} ${k + 1}`, placeholder: `${t.galleryH} ${k + 1}`, format: ['large', null, 'tall', null, 'wide', null, null][k % 7] })).slice(0, this.state.galShown || 7),
+      galleryHasMore: (this.state.galShown || 7) < GALLERY.length,
+      galleryExpanded: (this.state.galShown || 7) > 7,
+      galleryAllShown: (this.state.galShown || 7) >= GALLERY.length,
+      galleryPartial: (this.state.galShown || 7) < GALLERY.length,
+      galleryMore: () => this.setState(st => ({ galShown: Math.min(GALLERY.length, (st.galShown || 7) + 7) })),
+      galleryLess: () => { this.setState({ galShown: 7 }); this.navigate('galerii'); },
+      lightboxLabels: { closeLabel: t.close, prevLabel: t.prev, nextLabel: t.next },
+      partners: [{ name: 'Pontu', logo: 'assets/partners/pontu.png' }, { name: 'Tessa.lv Photography', logo: 'assets/partners/tessa-photography.png' }],
+      contactTitle: h(React.Fragment, null, t.contactT[0], h('br'), h('em', { style: { color: 'var(--ba-blue-300)' } }, t.contactT[1])),
+      contacts: { phone: '+372 5809 4779', email: 'info@antarra.ee' },
+      termsOpen,
+      openTerms: () => this.setState({ termsOpen: true }),
+      closeTerms: () => this.setState({ termsOpen: false }),
+      termsFooter: h(React.Fragment, null,
+        btn({ variant: 'secondary', size: 'm', onClick: () => this.setState({ termsOpen: false }) }, t.close),
+        btn({ size: 'm', icon: 'arrow-right', href: 'mailto:info@antarra.ee' }, t.contact)),
+      termsBody: DS.Prose ? (() => {
+        const T = TERMS_RU;
+        const sec = T.sections.map((x, k) => h('section', { key: k, style: { display: 'grid', gap: 10, padding: '20px 0', borderTop: '1px solid var(--border-default)' } },
+          h('h3', { style: { margin: 0, display: 'flex', alignItems: 'baseline', gap: 12, fontFamily: 'var(--font-display)', fontStyle: 'italic', fontWeight: 500, fontSize: '1.375rem', lineHeight: 1.2, color: 'var(--text-primary)' } },
+            h('span', { style: { fontFamily: 'var(--font-ui)', fontStyle: 'normal', fontWeight: 700, fontSize: 'var(--fs-micro)', letterSpacing: '.12em', color: 'var(--text-accent)' } }, String(k + 1).padStart(2, '0')), x.h),
+          h('ul', { style: { margin: 0, paddingLeft: 0, listStyle: 'none', display: 'grid', gap: 8 } }, x.items.map((it, j) => h('li', { key: j, style: { position: 'relative', paddingLeft: 20, fontFamily: 'var(--font-ui)', fontSize: 'var(--fs-body)', lineHeight: 1.6, color: 'var(--text-primary)' } },
+            h('span', { 'aria-hidden': 'true', style: { position: 'absolute', left: 2, top: '.7em', width: 6, height: 6, borderRadius: 999, background: 'var(--ba-blue-300)' } }), it)))));
+        return h(DS.Prose, null,
+          lang !== 'ru' ? h('p', { style: { margin: '0 0 12px', padding: '10px 14px', borderRadius: 8, background: 'var(--bg-subtle)', fontFamily: 'var(--font-ui)', fontSize: 'var(--fs-small)', color: 'var(--text-secondary)' } }, lang === 'et' ? 'Eestikeelne tõlge lisatakse. Allpool on omaniku kinnitatud tekst vene keeles.' : 'English translation to be added. Below is the owner-approved text in Russian.') : null,
+          h('div', { lang: 'ru', style: { display: 'grid' } },
+            h('p', { style: { margin: '0 0 8px', fontFamily: 'var(--font-display)', fontStyle: 'italic', fontWeight: 700, fontSize: 'clamp(1.75rem, 1.4rem + 1.2vw, 2.25rem)', lineHeight: 1.1, color: 'var(--text-primary)' } }, T.motto),
+            h('p', { style: { margin: '8px 0 4px', fontFamily: 'var(--font-ui)', fontWeight: 600, color: 'var(--text-primary)' } }, T.greeting),
+            h('p', { style: { margin: '0 0 20px', fontFamily: 'var(--font-ui)', fontSize: 'var(--fs-body-lg)', lineHeight: 1.65, color: 'var(--text-secondary)' } }, T.intro),
+            sec,
+            h('p', { style: { margin: '8px 0 0', paddingTop: 20, borderTop: '1px solid var(--border-default)', fontFamily: 'var(--font-ui)', fontSize: 'var(--fs-body)' } }, h('a', { href: 'tel:+37258094779' }, '+372 5809 4779'), ' · ', h('a', { href: 'mailto:info@antarra.ee' }, 'info@antarra.ee'))));
+      })() : null,
+    };
+  }
+}
+</script>
+</body>
+</html>

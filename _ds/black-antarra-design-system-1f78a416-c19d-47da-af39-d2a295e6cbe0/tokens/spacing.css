@@ -1,0 +1,17 @@
+:root{
+--space-1:4px;--space-2:8px;--space-3:12px;--space-4:16px;--space-5:24px;--space-6:32px;
+--space-7:48px;--space-8:64px;--space-9:80px;--space-10:96px;--space-11:128px;
+/* Layout */
+--container-max:1240px;
+--container-wide:1440px;
+--container-text:720px;
+--gutter:clamp(16px,4vw,56px); /* @kind spacing */          /* page side padding: 16 @320 → 56 desktop */
+--grid-gap:clamp(16px,2.2vw,32px);
+--section-y:clamp(56px,5vw + 32px,112px); /* @kind spacing */ /* 56 mobile → 112 desktop */
+--section-y-tight:clamp(40px,3vw + 24px,72px); /* @kind spacing */
+--card-pad:clamp(20px,2vw + 8px,32px);
+--header-h:72px;
+--header-h-mobile:60px;
+--hit-min:44px;
+/* Breakpoints (reference — use in media queries) 480 / 768 / 1024 / 1280 */
+}

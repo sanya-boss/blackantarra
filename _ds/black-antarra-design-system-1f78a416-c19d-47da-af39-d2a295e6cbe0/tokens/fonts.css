@@ -1,0 +1,11 @@
+/* Sentient — Indian Type Foundry (Fontshare, ITF Free Font License). Self-hosted. Latin only → Cyrillic falls back to PT Serif. */
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Manrope:wght@400;500;600;700&display=swap&subset=latin-ext,cyrillic');
+@font-face{font-family:'Sentient';src:url('../assets/fonts/Sentient-Light.woff2') format('woff2');font-weight:300;font-style:normal;font-display:swap}
+@font-face{font-family:'Sentient';src:url('../assets/fonts/Sentient-LightItalic.woff2') format('woff2');font-weight:300;font-style:italic;font-display:swap}
+@font-face{font-family:'Sentient';src:url('../assets/fonts/Sentient-Regular.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Sentient';src:url('../assets/fonts/Sentient-RegularItalic.woff2') format('woff2');font-weight:400;font-style:italic;font-display:swap}
+@font-face{font-family:'Sentient';src:url('../assets/fonts/Sentient-Medium.woff2') format('woff2');font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:'Sentient';src:url('../assets/fonts/Sentient-MediumItalic.woff2') format('woff2');font-weight:500;font-style:italic;font-display:swap}
+@font-face{font-family:'Sentient';src:url('../assets/fonts/Sentient-Bold.woff2') format('woff2');font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:'Sentient';src:url('../assets/fonts/Sentient-BoldItalic.woff2') format('woff2');font-weight:700;font-style:italic;font-display:swap}
+/* PT Serif (Cyrillic heading fallback) + Manrope (UI/body) — Google Fonts */

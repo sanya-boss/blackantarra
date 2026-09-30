@@ -1,0 +1,22 @@
+/* content — long text (purchase terms) + dialog */
+.ba-prose{max-width:var(--container-text);font:var(--type-body);font-size:var(--fs-body-lg);color:var(--text-primary)}
+.ba-prose>*+*{margin-top:1em}
+.ba-prose h1{font:var(--type-h1);margin-bottom:.4em}
+.ba-prose h2{font:var(--type-h3);font-size:clamp(1.625rem,1.4rem + .8vw,2rem);margin-top:1.8em;scroll-margin-top:calc(var(--header-h) + 16px)}
+.ba-prose h3{font:var(--fw-semibold) var(--fs-body-lg)/1.4 var(--font-ui);margin-top:1.6em}
+.ba-prose .ba-prose__lead{font:var(--type-lead);color:var(--text-secondary)}
+.ba-prose ul,.ba-prose ol{padding-left:1.25em}
+.ba-prose li+li{margin-top:.4em}
+.ba-prose li::marker{color:var(--text-accent)}
+.ba-prose a{color:var(--text-link)}
+.ba-prose .ba-prose__meta{font:var(--type-small);color:var(--text-secondary)}
+.ba-prose .ba-prose__placeholder{display:block;padding:14px 16px;border:var(--border-w) dashed var(--border-brand);border-radius:var(--radius-sm);background:var(--bg-subtle);font:var(--type-small);color:var(--text-link)}
+.ba-prose hr{border:0;border-top:var(--border-w) solid var(--border-default);margin:2em 0}
+.ba-dialog{position:fixed;inset:0;z-index:150;display:grid;place-items:center;padding:24px;background:var(--overlay-scrim);animation:ba-fade-in var(--dur-base) var(--ease-out)}
+.ba-dialog--contained{position:absolute}
+.ba-dialog__panel{width:min(100%,var(--dlg-w,760px));max-height:min(88vh,100%);display:grid;grid-template-rows:auto minmax(0,1fr) auto;background:var(--bg-surface);border-radius:var(--radius-xl);box-shadow:var(--shadow-overlay);overflow:hidden}
+.ba-dialog__head{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px 20px 16px 32px;border-bottom:var(--border-w) solid var(--border-subtle)}
+.ba-dialog__title{font:var(--type-h3);color:var(--text-primary)}
+.ba-dialog__body{overflow:auto;padding:28px 32px 32px;overscroll-behavior:contain}
+.ba-dialog__foot{display:flex;flex-wrap:wrap;gap:12px;justify-content:flex-end;padding:16px 32px;border-top:var(--border-w) solid var(--border-subtle);background:var(--bg-canvas)}
+@media (max-width:600px){.ba-dialog{padding:0;place-items:end stretch}.ba-dialog__panel{max-height:94vh;border-radius:var(--radius-xl) var(--radius-xl) 0 0}.ba-dialog__head{padding:16px 12px 12px 20px}.ba-dialog__body{padding:20px}.ba-dialog__foot{padding:12px 20px}.ba-dialog__foot .ba-btn{flex:1}}
