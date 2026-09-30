@@ -398,7 +398,7 @@ class Component extends DCLogic {
   hlOff = () => this.setState({ metaHl: false });
   toggleHero = () => this.setState(s => ({ heroOpen: !s.heroOpen, heroByScroll: false }));
   onResize = () => { const m = window.innerWidth < 900; if (m !== this.state.isMobile) this.setState({ isMobile: m }); };
-  componentWillUnmount() { window.removeEventListener('resize', this.onResize); window.removeEventListener('scroll', this.onScroll); document.removeEventListener('pointerdown', this.onDragStart); window.removeEventListener('pointermove', this.onDragMove); window.removeEventListener('pointerup', this.onDragEnd); window.removeEventListener('pointercancel', this.onDragEnd); document.removeEventListener('click', this.onLogoClick, true); window.removeEventListener('wheel', this.onWheel); window.removeEventListener('wheel', this.onSmoothWheel); if (this.sRaf) cancelAnimationFrame(this.sRaf); window.removeEventListener('touchstart', this.onTouchStart); window.removeEventListener('touchmove', this.onTouchMove); }
+  componentWillUnmount() { window.removeEventListener('resize', this.onResize); window.removeEventListener('scroll', this.onScroll); window.removeEventListener('hashchange', this.scrollToHash); document.removeEventListener('pointerdown', this.onDragStart); window.removeEventListener('pointermove', this.onDragMove); window.removeEventListener('pointerup', this.onDragEnd); window.removeEventListener('pointercancel', this.onDragEnd); document.removeEventListener('click', this.onLogoClick, true); window.removeEventListener('wheel', this.onWheel); window.removeEventListener('wheel', this.onSmoothWheel); if (this.sRaf) cancelAnimationFrame(this.sRaf); window.removeEventListener('touchstart', this.onTouchStart); window.removeEventListener('touchmove', this.onTouchMove); }
   setLang = (lang) => { this.setState({ lang }); try { localStorage.setItem('ba-landing-lang', lang); document.documentElement.lang = lang; } catch (e) {} };
   animateTo = (top) => {
     if (this.sRaf) { cancelAnimationFrame(this.sRaf); this.sRaf = null; }
@@ -420,7 +420,22 @@ class Component extends DCLogic {
     const ot = document.querySelector('meta[property="og:title"]'); if (ot) ot.setAttribute('content', M[l][0]);
   }
   componentDidUpdate(pp, ps) { if (ps.lang !== this.state.lang) this.applyMeta(); }
-  componentDidMount() { this.applyMeta(); window.addEventListener('resize', this.onResize); window.addEventListener('scroll', this.onScroll, { passive: true }); document.addEventListener('pointerdown', this.onDragStart); window.addEventListener('pointermove', this.onDragMove, { passive: false }); window.addEventListener('pointerup', this.onDragEnd); window.addEventListener('pointercancel', this.onDragEnd); document.addEventListener('click', this.onLogoClick, true); this.heroPassed(); window.addEventListener('wheel', this.onWheel, { passive: false }); window.addEventListener('wheel', this.onSmoothWheel, { passive: false }); window.addEventListener('touchstart', this.onTouchStart, { passive: true }); window.addEventListener('touchmove', this.onTouchMove, { passive: false }); this.onResize(); }
+  scrollToHash = () => {
+    const id = decodeURIComponent((location.hash || '').slice(1)); if (!id || id === 'top') return;
+    let n = 0;
+    const go = () => {
+      const el = document.getElementById(id);
+      if (!el) { if (++n < 40) setTimeout(go, 100); return; }
+      if (this.state.isMobile && !this.state.heroOpen) this.setState({ heroOpen: true, heroByScroll: true });
+      const hdr = document.querySelector('.ba-header-wrap');
+      const off = hdr ? hdr.getBoundingClientRect().height : 0;
+      const y = el.getBoundingClientRect().top + window.scrollY - off;
+      window.scrollTo({ top: y, behavior: 'auto' });
+      if (n < 6) { n = 40; setTimeout(() => { const y2 = el.getBoundingClientRect().top + window.scrollY - off; if (Math.abs(y2 - window.scrollY) > 4) window.scrollTo({ top: y2, behavior: 'auto' }); }, 600); }
+    };
+    setTimeout(go, 150);
+  };
+  componentDidMount() { this.applyMeta(); this.scrollToHash(); window.addEventListener('hashchange', this.scrollToHash); window.addEventListener('resize', this.onResize); window.addEventListener('scroll', this.onScroll, { passive: true }); document.addEventListener('pointerdown', this.onDragStart); window.addEventListener('pointermove', this.onDragMove, { passive: false }); window.addEventListener('pointerup', this.onDragEnd); window.addEventListener('pointercancel', this.onDragEnd); document.addEventListener('click', this.onLogoClick, true); this.heroPassed(); window.addEventListener('wheel', this.onWheel, { passive: false }); window.addEventListener('wheel', this.onSmoothWheel, { passive: false }); window.addEventListener('touchstart', this.onTouchStart, { passive: true }); window.addEventListener('touchmove', this.onTouchMove, { passive: false }); this.onResize(); }
   renderVals() {
     const DS = window.BlackAntarraDesignSystem_1f78a4 || {};
     const h = React.createElement;
@@ -434,7 +449,7 @@ class Component extends DCLogic {
       key: c.id + lang, name: c.name, breed: ({ ru: ['Ориентальный', 'Сиамский'], et: ['Idamaine', 'Siiami'], en: ['Oriental', 'Siamese'] }[lang] || [])[c.breed] || t.breeds[c.breed].name, photo: c.photo, alt: c.name, text: c.id !== 'benya' ? c.text[lang] : c.text ? (() => { const tx = c.text[lang]; const nm = { et: 'Benjamin', en: 'Benjamin', ru: 'Бенджамин' }[lang]; const k = tx.indexOf(nm); return k < 0 ? tx : h(React.Fragment, null, tx.slice(0, k), h('strong', null, nm), tx.slice(k + nm.length)); })() : undefined, focus: c.focus,
       placeholder: `${t.catPh}: ${c.name}`,
     })) : null;
-    const credit = React.createElement('a', { href: 'https://sanya-boss.github.io/cv.html', target: '_blank', rel: 'noopener', style: { color: 'inherit', textDecoration: 'none' } }, 'Mezhstroy Design');
+    const credit = React.createElement('a', { href: 'https://sanya-boss.github.io/cv.html', target: '_blank', rel: 'noopener', style: { color: 'inherit', textDecoration: 'none' } }, 'Made by Mežennõi');
     return { credit,
       lang, t, links, social: SOCIAL, setLang: this.setLang, navigate: this.navigate,
       sticky: this.props.stickyHeader ?? true,
