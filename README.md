@@ -10,5 +10,7 @@ Black Antarra | Cattery of Noble Siamese and Oriental Cats in Estonia.
 - `assets/` — логотипы, иконки, иллюстрации, фото
 - `uploads/` — исходные материалы
 
-Сайт статический: можно открыть через любой веб-сервер или GitHub Pages
-(файл `.nojekyll` нужен, чтобы папка `_ds` публиковалась).
+Сайт статический. Публикация на GitHub Pages идёт автоматически через
+`.github/workflows/pages.yml` при каждом пуше в `main`
+(Settings → Pages → Source: **GitHub Actions**).
+Адрес: https://sanya-boss.github.io/blackantarra/
