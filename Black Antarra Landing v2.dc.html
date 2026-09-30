@@ -53,7 +53,7 @@
       <div style="max-width: var(--container-max); margin: 0 auto; padding: 0 var(--gutter); display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: clamp(40px,5vw,80px); align-items: center;">
         <div style="display: grid; grid-template-columns: minmax(0, 1fr); gap: clamp(20px,2.4vw,32px); align-content: center; min-width: 0; max-width: 620px;">
         <p style="margin: 0; display: flex; align-items: center; gap: 12px; font-family: var(--font-ui); font-weight: 600; font-size: var(--fs-label); line-height: 1.3; letter-spacing: .14em; text-transform: uppercase; color: var(--text-accent);"><span style="width: 32px; height: 1.5px; background: currentColor; flex: none;"></span>{{ t.cattery }}</p>
-        <h1 style="margin: 0; font-family: var(--font-display); font-style: italic; font-weight: 700; font-size: min(var(--fs-display), 5vw); min-width: 0; line-height: {{ heroLH }}; letter-spacing: -.01em; color: var(--text-primary); text-wrap: balance; overflow-wrap: anywhere; hyphens: auto">{{ heroTitleNode }}</h1>
+        <h1 style="margin: 0; font-family: var(--font-display); font-style: italic; font-weight: 700; font-size: min(var(--fs-display), 5vw); min-width: 0; line-height: {{ heroLH }}; letter-spacing: -.01em; color: var(--text-primary); text-wrap: balance; hyphens: none">{{ heroTitleNode }}</h1>
         
         <p style="margin: 0; max-width: 46ch; font-family: var(--font-ui); font-size: var(--fs-lead); line-height: 1.6; color: var(--text-secondary); text-wrap: pretty;">{{ heroLeadNode }}</p><div style="display: flex; flex-wrap: wrap; gap: 12px;">
           <x-import component-from-global-scope="BlackAntarraDesignSystem_1f78a4.Button" size="l" icon="arrow-right" on-click="{{ goCats }}" hint-size="220px,52px">{{ t.meet }}</x-import>
@@ -102,7 +102,7 @@
           <div id="hero-more" style="display: grid; grid-template-rows: {{ heroRows }}; opacity: {{ heroOpacity }}; margin: -20px -20px -20px; transition: grid-template-rows 1100ms cubic-bezier(.45,0,.2,1), opacity 900ms cubic-bezier(.45,0,.2,1) 150ms;">
             <div style="overflow: hidden; min-height: 0;">
               <div style="display: grid; gap: 20px; padding: 20px 20px 0;">
-          <h1 style="margin: 0; font-family: var(--font-display); font-style: italic; font-weight: 700; font-size: clamp(2.25rem, 10vw, 2.875rem); line-height: 1.02; letter-spacing: -.015em; color: var(--text-primary); text-wrap: balance; overflow-wrap: anywhere; hyphens: auto;">{{ t.hero.a }} <span style="color: var(--ba-blue-300);">{{ t.hero.b }}</span></h1>
+          <h1 style="margin: 0; font-family: var(--font-display); font-style: italic; font-weight: 700; font-size: clamp(2.25rem, 10vw, 2.875rem); line-height: 1.02; letter-spacing: -.015em; color: var(--text-primary); text-wrap: balance; hyphens: none;">{{ t.hero.a }} <span style="color: var(--ba-blue-300);">{{ t.hero.b }}</span></h1>
           <p style="margin: 0; font-family: var(--font-ui); font-size: var(--fs-body); line-height: 1.6; color: var(--text-primary); text-wrap: pretty;">{{ heroLeadNode }}</p>
           <a href="#kassid" onClick="{{ goCatsLink }}" style="display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 52px; padding: 0 6px 0 20px; border-radius: var(--radius-pill); background: var(--ba-ink-900); color: #fff; text-decoration: none; font-family: var(--font-ui); font-weight: 700; font-size: var(--fs-body);" style-active="transform: translateY(1px);">
             <span>{{ t.meet }}</span>
