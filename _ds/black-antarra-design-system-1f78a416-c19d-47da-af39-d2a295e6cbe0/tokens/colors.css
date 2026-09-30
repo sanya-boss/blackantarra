@@ -1,0 +1,81 @@
+/* Black Antarra — color tokens. Primitives first, then semantic roles. Components use semantic roles only. */
+:root{
+/* Primitives — neutrals (slightly cool) */
+--ba-white:#FFFFFF;
+--ba-mist-50:#F7F8F8;
+--ba-mist-100:#EFF2F3;
+--ba-mist-200:#E3E9EC;
+--ba-mist-300:#D5DFE5;
+--ba-slate-500:#7A848A;
+--ba-slate-600:#596166;
+--ba-slate-800:#353A3C;
+--ba-ink-900:#202322;
+/* Primitives — antarra blue (dusty pastel) */
+--ba-blue-50:#EDF3F7;
+--ba-blue-100:#DCE8F0;
+--ba-blue-200:#C3D6E4;
+--ba-blue-300:#9CBBD2;
+--ba-blue-400:#86A9C3;
+--ba-blue-600:#426780;
+--ba-blue-700:#285C85;
+--ba-blue-800:#284457;
+/* Primitives — status */
+--ba-green-700:#326648;
+--ba-green-50:#E8F1EB;
+--ba-red-700:#A83939;
+--ba-red-50:#F7E9E9;
+--ba-amber-700:#7A5A1E;
+--ba-amber-50:#F6EFE0;
+
+/* Semantic — backgrounds */
+--bg-canvas:var(--ba-mist-50);
+--bg-surface:var(--ba-white);
+--bg-subtle:var(--ba-blue-50);
+--bg-muted:var(--ba-mist-100);
+--bg-brand:var(--ba-blue-300);
+--bg-brand-soft:var(--ba-blue-100);
+--bg-inverse:var(--ba-ink-900);
+/* Semantic — text */
+--text-primary:var(--ba-ink-900);
+--text-secondary:var(--ba-slate-600);
+--text-tertiary:var(--ba-slate-500); /* large/meta text only — 3.6:1 on canvas */
+--text-on-brand:var(--ba-ink-900);   /* ink on pastel blue: 7.9:1. Never white on --bg-brand */
+--text-on-strong:var(--ba-white);    /* white on --action-strong: 6.0:1 */
+--text-on-inverse:var(--ba-mist-50);
+--text-link:var(--ba-blue-600);
+--text-link-hover:var(--ba-blue-800);
+--text-accent:var(--ba-blue-600);    /* italic accent words, eyebrow */
+/* Semantic — brand graphics (decorative, not for text) */
+--graphic-brand:var(--ba-blue-300);
+--graphic-brand-soft:var(--ba-blue-100);
+--graphic-ink:var(--ba-ink-900);
+/* Semantic — actions */
+--action-primary:var(--ba-blue-300);
+--action-primary-hover:var(--ba-blue-400);
+--action-primary-pressed:#779CB8;
+--action-strong:var(--ba-blue-600);
+--action-strong-hover:var(--ba-blue-800);
+--action-secondary-border:var(--ba-blue-600);
+--action-secondary-hover:var(--ba-blue-50);
+--action-disabled-bg:var(--ba-mist-200);
+--action-disabled-text:var(--ba-slate-500);
+/* Semantic — borders */
+--border-default:var(--ba-mist-300);
+--border-subtle:var(--ba-mist-200);
+--border-strong:var(--ba-slate-500); /* form fields: 3.8:1 on white */
+--border-brand:var(--ba-blue-300);
+--focus-ring:var(--ba-blue-700);
+/* Semantic — status */
+--status-success:var(--ba-green-700);
+--status-success-bg:var(--ba-green-50);
+--status-error:var(--ba-red-700);
+--status-error-bg:var(--ba-red-50);
+--status-reserved:var(--ba-amber-700);
+--status-reserved-bg:var(--ba-amber-50);
+--status-info:var(--ba-blue-600);
+--status-info-bg:var(--ba-blue-50);
+/* Overlays */
+--overlay-scrim:rgba(32,35,34,.55);
+--overlay-photo-fade:linear-gradient(to top,rgba(247,248,248,.96) 0%,rgba(247,248,248,.82) 38%,rgba(247,248,248,0) 72%); /* @kind color */
+--overlay-photo-dark:linear-gradient(to top,rgba(32,35,34,.72) 0%,rgba(32,35,34,0) 55%); /* @kind color */
+}

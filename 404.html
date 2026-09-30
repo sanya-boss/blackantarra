@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/black-antarra-design-system-1f78a416-c19d-47da-af39-d2a295e6cbe0/tokens/fonts.css">
+  <link rel="stylesheet" href="_ds/black-antarra-design-system-1f78a416-c19d-47da-af39-d2a295e6cbe0/tokens/colors.css">
+  <link rel="stylesheet" href="_ds/black-antarra-design-system-1f78a416-c19d-47da-af39-d2a295e6cbe0/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/black-antarra-design-system-1f78a416-c19d-47da-af39-d2a295e6cbe0/tokens/spacing.css">
+  <link rel="stylesheet" href="_ds/black-antarra-design-system-1f78a416-c19d-47da-af39-d2a295e6cbe0/tokens/effects.css">
+  <link rel="stylesheet" href="_ds/black-antarra-design-system-1f78a416-c19d-47da-af39-d2a295e6cbe0/tokens/base.css">
+  <link rel="stylesheet" href="_ds/black-antarra-design-system-1f78a416-c19d-47da-af39-d2a295e6cbe0/components/core/core.css">
+  <link rel="stylesheet" href="_ds/black-antarra-design-system-1f78a416-c19d-47da-af39-d2a295e6cbe0/styles.css">
+  <script src="_ds/black-antarra-design-system-1f78a416-c19d-47da-af39-d2a295e6cbe0/_ds_bundle.js"></script>
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#F7F8F8">
+  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32.png">
+  <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+  <title>404 — Black Antarra</title>
+  <style>body{margin:0;background:var(--bg-canvas)}a{color:var(--ba-blue-700,#426780)}a:hover{color:var(--text-primary)}
+@keyframes ba404-rise{0%{transform:translateY(55%)}100%{transform:translateY(0)}}
+@keyframes ba404-sway{0%,100%{transform:rotate(0deg)}25%{transform:rotate(1.4deg)}75%{transform:rotate(-1.4deg)}}
+@keyframes ba404-in{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+#ba404-cat{animation:ba404-rise 1s cubic-bezier(.22,1,.36,1) .5s both}
+#ba404-cat>img{transform-origin:50% 100%;animation:ba404-sway 5.5s ease-in-out 1.6s infinite}
+#ba404-copy{animation:ba404-in .6s cubic-bezier(.2,0,0,1) .15s both}
+.ba404-tab{background:var(--bg-surface,#fff);transition:transform 220ms cubic-bezier(.2,0,0,1),background 150ms}
+.ba404-tab:hover{background:var(--bg-brand-soft,#EDF3F7)}.ba404-tab>span{transition:transform 220ms cubic-bezier(.2,0,0,1)}.ba404-tab:hover>span{transform:translateY(-4px)}
+@media (prefers-reduced-motion:reduce){#ba404-cat,#ba404-cat>img,#ba404-copy{animation:none}.ba404-tab{transition:none}}</style>
+</helmet>
+<div lang="{{ lang }}" style="min-height: 100vh; display: flex; flex-direction: column; background: var(--bg-canvas); color: var(--text-primary); font-family: var(--font-ui); overflow-x: clip;">
+  <header style="display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 20px var(--gutter); max-width: var(--container-max); width: 100%; margin: 0 auto; box-sizing: border-box;">
+    <a href="Black Antarra Landing v2.dc.html" aria-label="Black Antarra" style="display: block;">
+      <img src="assets/logo/ba-logotype.svg" alt="Black Antarra — Siamese &amp; Oriental Cattery" style="display: block; width: clamp(150px,14vw,190px); height: auto;">
+    </a>
+    <x-import component-from-global-scope="BlackAntarraDesignSystem_1f78a4.LanguageSwitcher" value="{{ lang }}" on-change="{{ setLang }}" hint-size="120px,36px"></x-import>
+  </header>
+
+  <main style="flex: 1; display: flex; align-items: center; padding: clamp(24px,4vw,56px) var(--gutter) clamp(56px,7vw,112px);">
+    <div style="max-width: var(--container-max); width: 100%; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: clamp(56px,7vw,112px);">
+
+      <div id="ba404-copy" style="flex: 1 1 380px; max-width: 540px; display: flex; flex-direction: column; align-items: flex-start; gap: 20px;">
+        <span style="display: flex; align-items: center; gap: 12px; font: 600 13px/1 var(--font-ui); letter-spacing: .14em; text-transform: uppercase; color: var(--ba-blue-700, #426780);"><span style="width: 32px; height: 1.5px; background: currentColor;"></span>{{ t.eyebrow }}</span>
+        <h1 style="margin: 0; font-family: var(--font-display); font-style: italic; font-weight: 700; font-size: var(--fs-display, clamp(40px,5.5vw,72px)); line-height: 1.02; letter-spacing: -.01em; text-wrap: balance;">{{ t.a }} <span style="color: var(--ba-blue-300, #9CBBD2);">{{ t.b }}</span></h1>
+        <p style="margin: 0; max-width: 44ch; font-size: 17px; line-height: 1.65; color: var(--text-secondary); text-wrap: pretty;">{{ t.lead }}</p>
+        <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px 24px; margin-top: 8px;">
+          <x-import component-from-global-scope="BlackAntarraDesignSystem_1f78a4.Button" size="l" on-click="{{ goHome }}" hint-size="180px,52px">{{ t.home }}</x-import>
+          
+        </div>
+      </div>
+
+      <div style="flex: 0 1 400px; max-width: 400px; width: 100%; position: relative; padding-top: clamp(190px,22vw,260px);">
+        <div aria-hidden="true" style="position: absolute; top: 0; left: 50%; width: 96%; translate: -50% 0; height: calc(clamp(190px,22vw,260px) + 70px); z-index: 0;">
+          <div id="ba404-cat" style="position: absolute; left: 0; right: 0; bottom: 0;">
+            <img src="assets/logo/ba-logo-blue.svg" alt="" style="display: block; width: 100%; height: auto;">
+          </div>
+        </div>
+        <div style="position: relative; z-index: 1; rotate: -2deg; border-radius: 16px; box-shadow: var(--shadow-raised, var(--shadow-card)); overflow: hidden;">
+          <div style="background: var(--bg-surface, #fff); padding: 28px 28px 24px; display: flex; flex-direction: column; align-items: center; gap: 6px; text-align: center;">
+            <span style="font: 700 13px/1 var(--font-ui); letter-spacing: .22em; text-transform: uppercase; color: var(--ba-blue-700, #426780);">{{ t.wanted }}</span>
+            <span style="font-family: var(--font-display); font-style: italic; font-weight: 700; font-size: clamp(96px,12vw,132px); line-height: .95; letter-spacing: -.02em;">4<span style="color: var(--ba-blue-300, #9CBBD2);">0</span>4</span>
+            <span style="font-family: var(--font-display); font-style: italic; font-weight: 500; font-size: 22px; line-height: 1.25;">{{ t.what }}</span>
+            <div style="width: 100%; margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--border-subtle, #D5DFE5); display: grid; grid-template-columns: auto minmax(0,1fr); gap: 8px 14px; text-align: left; font-size: 14px; line-height: 1.45;">
+              <span style="color: var(--text-secondary);">{{ t.k1 }}</span><span style="font-weight: 600;">{{ t.v1 }}</span>
+              <span style="color: var(--text-secondary);">{{ t.k2 }}</span><span style="font-weight: 600;">{{ t.v2 }}</span>
+            </div>
+          </div>
+          <div style="border-top: 2px dashed var(--ba-blue-200, #C5D7E4); display: grid; grid-template-columns: repeat(4, minmax(0,1fr));">
+            <sc-for list="{{ tabs }}" as="tab" hint-placeholder-count="4">
+              <a class="ba404-tab" href="{{ tab.href }}" style="display: flex; align-items: center; justify-content: center; height: 132px; padding: 12px 0; border-left: {{ tab.bl }}; text-decoration: none; color: var(--text-primary); transform-origin: 50% 0;">
+                <span style="writing-mode: vertical-rl; rotate: 180deg; font: 600 14px/1.2 var(--font-ui); white-space: nowrap;">{{ tab.label }}</span>
+              </a>
+            </sc-for>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const T = {
+  et: { eyebrow: 'Viga 404', a: 'Leht on kadunud.', b: 'Kassid mitte.', lead: 'Otsitud lehte ei leitud — võib-olla on link vananenud või aadressis on viga. Rebige kuulutuselt lipik ja jätkake sealt, kus soovite.', home: 'Avalehele', wanted: 'Otsitakse', what: 'Leht, mida otsisite', k1: 'Viimati nähtud', v1: 'vanal aadressil', k2: 'Tunnused', v2: 'vale link või trükiviga', tabs: ['Meist', 'Tõud', 'Kassid', 'Kontaktid'] },
+  en: { eyebrow: 'Error 404', a: 'The page is missing.', b: 'The cats aren’t.', lead: 'We couldn’t find the page you were looking for — the link may be outdated or the address mistyped. Tear off a tab from the notice and carry on from there.', home: 'Back to home', wanted: 'Missing', what: 'The page you were looking for', k1: 'Last seen', v1: 'at an old address', k2: 'Features', v2: 'a broken link or a typo', tabs: ['About us', 'Breeds', 'Our cats', 'Contact'] },
+  ru: { eyebrow: 'Ошибка 404', a: 'Страница потерялась.', b: 'Кошки — нет.', lead: 'Страница не найдена — возможно, ссылка устарела или в адресе опечатка. Оторвите листок с объявления и продолжите там, где хотите.', home: 'На главную', wanted: 'Разыскивается', what: 'Страница, которую вы искали', k1: 'Последний раз', v1: 'по старому адресу', k2: 'Приметы', v2: 'неверная ссылка или опечатка', tabs: ['О питомнике', 'Породы', 'Наши кошки', 'Контакты'] },
+};
+const HOME = 'Black Antarra Landing v2.dc.html';
+const IDS = ['meist', 'toud', 'kassid', 'kontaktid'];
+class Component extends DCLogic {
+  state = { lang: (typeof localStorage !== 'undefined' && localStorage.getItem('ba-landing-lang')) || 'et' };
+  setLang = (l) => { try { localStorage.setItem('ba-landing-lang', l); } catch (e) {} this.setState({ lang: l }); };
+  renderVals() {
+    const lang = T[this.state.lang] ? this.state.lang : 'et';
+    const t = T[lang];
+    return {
+      lang, t, setLang: this.setLang,
+      langs: ['et', 'en', 'ru'].map(c => ({ code: c.toUpperCase(), on: String(c === lang), bg: c === lang ? 'var(--ba-blue-300, #9CBBD2)' : 'transparent', pick: () => this.setLang(c) })),
+      tabs: t.tabs.map((label, i) => ({ label, href: HOME + '#' + IDS[i], bl: i ? '1.5px dashed var(--ba-blue-200, #C5D7E4)' : '0' })),
+      goHome: () => { location.href = HOME; },
+    };
+  }
+}
+</script>
+</body>
+</html>

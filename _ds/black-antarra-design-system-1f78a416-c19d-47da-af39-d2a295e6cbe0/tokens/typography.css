@@ -1,0 +1,43 @@
+:root{
+--font-display:'Sentient','PT Serif',Georgia,'Times New Roman',serif;
+--font-ui:'Manrope','Segoe UI',system-ui,-apple-system,sans-serif;
+/* Fluid sizes: mobile (360) → desktop (1280) */
+--fs-display:clamp(2.5rem,1.55rem + 3.6vw,4.5rem); /* @kind other */     /* 40 → 72 — Sentient is wide */
+--fs-h1:clamp(2.25rem,1.7rem + 2.2vw,3.5rem); /* @kind other */         /* 36 → 56 */
+--fs-h2:clamp(1.875rem,1.5rem + 1.5vw,2.75rem); /* @kind other */       /* 30 → 44 */
+--fs-h3:clamp(1.375rem,1.25rem + .5vw,1.75rem); /* @kind other */       /* 22 → 28 */
+--fs-lead:clamp(1.0625rem,1rem + .3vw,1.25rem); /* @kind other */       /* 17 → 20 */
+--fs-body:1rem; /* @kind other */          /* 16 */
+--fs-body-lg:1.0625rem; /* @kind other */  /* 17 */
+--fs-small:.875rem; /* @kind other */      /* 14 */
+--fs-label:.8125rem; /* @kind other */     /* 13 */
+--fs-micro:.75rem; /* @kind other */       /* 12 */
+--fs-button:.9375rem; /* @kind other */    /* 15 */
+--lh-display:1.06; /* @kind other */
+--lh-heading:1.12; /* @kind other */
+--lh-h3:1.2; /* @kind other */
+--lh-body:1.6; /* @kind other */
+--lh-small:1.5; /* @kind other */
+--lh-label:1.35; /* @kind other */
+--fw-regular:400; /* @kind other */
+--fw-medium:500; /* @kind other */
+--fw-semibold:600; /* @kind other */
+--fw-bold:700; /* @kind other */
+--fw-display:700; /* @kind other */  /* display + H1: Sentient Bold Italic, as on the live site */
+--fw-heading:500; /* @kind other */  /* H2/H3: Sentient Medium Italic */
+--tracking-display:-.01em; /* @kind other */
+--tracking-label:.08em; /* @kind other */  /* uppercase eyebrows only */
+--tracking-band:.18em; /* @kind other */   /* brand band */
+--measure-body:66ch; /* @kind other */
+--measure-lead:52ch; /* @kind other */
+/* Semantic roles */
+--type-display:italic var(--fw-display) var(--fs-display)/var(--lh-display) var(--font-display);
+--type-h1:italic var(--fw-display) var(--fs-h1)/var(--lh-heading) var(--font-display);
+--type-h2:italic var(--fw-heading) var(--fs-h2)/var(--lh-heading) var(--font-display);
+--type-h3:italic var(--fw-heading) var(--fs-h3)/var(--lh-h3) var(--font-display);
+--type-lead:var(--fw-regular) var(--fs-lead)/1.55 var(--font-ui);
+--type-body:var(--fw-regular) var(--fs-body)/var(--lh-body) var(--font-ui);
+--type-small:var(--fw-regular) var(--fs-small)/var(--lh-small) var(--font-ui);
+--type-label:var(--fw-semibold) var(--fs-label)/var(--lh-label) var(--font-ui);
+--type-button:var(--fw-semibold) var(--fs-button)/1.2 var(--font-ui);
+}
