@@ -102,7 +102,7 @@
           <div id="hero-more" style="display: grid; grid-template-rows: {{ heroRows }}; opacity: {{ heroOpacity }}; margin: -20px -20px -20px; transition: grid-template-rows 1100ms cubic-bezier(.45,0,.2,1), opacity 900ms cubic-bezier(.45,0,.2,1) 150ms;">
             <div style="overflow: hidden; min-height: 0;">
               <div style="display: grid; gap: 20px; padding: 20px 20px 0;">
-          <h1 style="margin: 0; font-family: var(--font-display); font-style: italic; font-weight: 700; font-size: clamp(2.25rem, 10vw, 2.875rem); line-height: 1.02; letter-spacing: -.015em; color: var(--text-primary); text-wrap: balance; hyphens: none;">{{ t.hero.a }} <span style="color: var(--ba-blue-300);">{{ t.hero.b }}</span></h1>
+          <h1 style="margin: 0; font-family: var(--font-display); font-style: italic; font-weight: 700; font-size: clamp(2.25rem, 10vw, 2.875rem); line-height: 1.02; letter-spacing: -.015em; color: var(--text-primary); text-wrap: balance; hyphens: none;">{{ heroMobA }} <span style="color: var(--ba-blue-300);">{{ heroMobB }}</span></h1>
           <p style="margin: 0; font-family: var(--font-ui); font-size: var(--fs-body); line-height: 1.6; color: var(--text-primary); text-wrap: pretty;">{{ heroLeadNode }}</p>
           <a href="#kassid" onClick="{{ goCatsLink }}" style="display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 52px; padding: 0 6px 0 20px; border-radius: var(--radius-pill); background: var(--ba-ink-900); color: #fff; text-decoration: none; font-family: var(--font-ui); font-weight: 700; font-size: var(--fs-body);" style-active="transform: translateY(1px);">
             <span>{{ t.meet }}</span>
@@ -306,6 +306,15 @@ const I18N = {
     termsLead: 'Условия переносятся без изменений из утверждённого владельцем текста.', catPh: 'Фото',
   },
 };
+const NAME_STEMS = ['Benjamin','Бенджамин','Benya','Беня','Enigm','Энигм','Hattori','Хаттори','Hanzo','Ханзо','Giuseppe','Джузеппе','Akacj','Акаци','Graffiti','Граффити','Caramel','Карамел','Ice','Айс','Kristoff','Кристоф','Ufne','Уфне','Milky','Милки','Meliss','Мелисс','Marsel','Марсел','Peter','Питер','Pan','Пэн'];
+const NAME_RE = new RegExp('(?<![\\p{L}])(?:' + NAME_STEMS.join('|') + ')\\p{L}*', 'gu');
+function boldNames(tx) {
+  if (!tx) return tx;
+  const out = []; let last = 0, m, i = 0; NAME_RE.lastIndex = 0;
+  while ((m = NAME_RE.exec(tx))) { if (m.index > last) out.push(tx.slice(last, m.index)); out.push(React.createElement('strong', { key: i++ }, m[0])); last = m.index + m[0].length; }
+  if (!out.length) return tx; if (last < tx.length) out.push(tx.slice(last));
+  return React.createElement(React.Fragment, null, ...out);
+}
 const CATS = [
   { id: 'benya', name: "Benya", breed: 0, focus: '50% 30%', photo: 'assets/photos/6362-6634-4938-a132-633163633565.webp', text: { et: 'Benjamin on kassikasvatuse tõeline staar. Sihvakas figuur, läbistavad rohelised silmad ja graatsilised liigutused.', en: 'Benjamin is the true star of the cattery. A slender figure, piercing green eyes and graceful movement.', ru: 'Бенджамин — настоящая звезда питомника. Стройная фигура, пронзительные зелёные глаза и грациозные движения.' } },
   { id: 'enigma', name: "Enigma", breed: 0, focus: '50% 30%', photo: 'assets/photos/3137-3364-4461-a537-393961353561.webp', text: { et: "Enigma on kütkestav kontrastide segu, mille pool tema mantlist ja näost on süsimustas elegantsis ja teine pool ürgses lumivalges puhtuses.", en: "Enigma is a captivating blend of contrasts: half of her coat and face is coal-black elegance, the other half pristine snow-white.", ru: "Энигма — завораживающее сочетание контрастов: половина её шубки и мордочки — угольно-чёрная элегантность, другая — первозданная белоснежная чистота." } },
@@ -446,16 +455,18 @@ class Component extends DCLogic {
     const showContact = this.props.heroContactButton ?? false;
     const links = ['meist', 'kassid', 'galerii', 'kontaktid'].map(id => ({ id, label: t.nav[id] }));
     const catSlides = DS.FeaturedCat ? CATS.map(c => h(DS.FeaturedCat, {
-      key: c.id + lang, name: c.name, breed: ({ ru: ['Ориентальный', 'Сиамский'], et: ['Idamaine', 'Siiami'], en: ['Oriental', 'Siamese'] }[lang] || [])[c.breed] || t.breeds[c.breed].name, photo: c.photo, alt: c.name, text: c.id !== 'benya' ? c.text[lang] : c.text ? (() => { const tx = c.text[lang]; const nm = { et: 'Benjamin', en: 'Benjamin', ru: 'Бенджамин' }[lang]; const k = tx.indexOf(nm); return k < 0 ? tx : h(React.Fragment, null, tx.slice(0, k), h('strong', null, nm), tx.slice(k + nm.length)); })() : undefined, focus: c.focus,
+      key: c.id + lang, name: c.name, breed: ({ ru: ['Ориентальный', 'Сиамский'], et: ['Idamaine', 'Siiami'], en: ['Oriental', 'Siamese'] }[lang] || [])[c.breed] || t.breeds[c.breed].name, photo: c.photo, alt: c.name, text: c.text ? boldNames(c.text[lang]) : undefined, focus: c.focus,
       placeholder: `${t.catPh}: ${c.name}`,
     })) : null;
-    const credit = React.createElement('a', { href: 'https://sanya-boss.github.io/cv.html', target: '_blank', rel: 'noopener', style: { color: 'inherit', textDecoration: 'none' } }, 'Made by Mežennõi');
+    const credit = React.createElement('a', { href: 'https://sanya-boss.github.io/cv.html', target: '_blank', rel: 'noopener', style: { color: 'inherit', textDecoration: 'none' } }, 'Designed by Mežennõi');
     return { credit,
       lang, t, links, social: SOCIAL, setLang: this.setLang, navigate: this.navigate,
       sticky: this.props.stickyHeader ?? true,
       facebookUrl: SOCIAL[0].href,
       heroTitleNode: h(React.Fragment, null, t.hero.a + ' ', h('span', { style: { color: 'var(--ba-blue-300)' } }, t.hero.b)),
       heroLeadNode: (() => { const tx = t.hero.lead; const k = tx.indexOf('Black Antarra'); return k < 0 ? tx : h(React.Fragment, null, tx.slice(0, k), h('strong', { style: { fontWeight: 700, color: 'var(--text-primary)' } }, 'Black Antarra'), tx.slice(k + 13)); })(),
+      heroMobA: lang === 'en' ? h(React.Fragment, null, 'Feline', h('br'), 'elegance,') : t.hero.a,
+      heroMobB: lang === 'en' ? h(React.Fragment, null, 'raised', h('br'), 'at home.') : t.hero.b,
       heroLH: lang === 'en' ? '1.06' : lang === 'et' ? '1.02' : '0.91',
       hlOn: this.hlOn, hlOff: this.hlOff, metaHl: this.state.metaHl ? '1' : '0',
       fbSrc: 'https://www.facebook.com/plugins/page.php?href=' + encodeURIComponent('https://www.facebook.com/Blackantarra') + '&tabs=timeline&width=500&height=700&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=false&lazy=true&locale=' + ({ et: 'et_EE', en: 'en_US', ru: 'ru_RU' }[lang]),
