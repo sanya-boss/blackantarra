@@ -36,6 +36,8 @@ FIXES = [
     ("hero cat animation class",
      '<img src="assets/logo/ba-logo-blue.svg" alt="" width="332" height="276" style="position: absolute; width: 916px;',
      '<img class="ba-hero-cat" src="assets/logo/ba-logo-blue.svg" alt="" width="332" height="276" style="position: absolute; width: 916px;'),
+    ("footer credit link",
+     "href: 'https://sanya-boss.github.io/cv.html'", "href: 'https://sanya-boss.github.io/portfolio/'"),
     # Language from the URL: /et/, /en/, /ru/ win over the saved choice.
     ("language from URL (initial state)",
      "state = { lang: (typeof localStorage !== 'undefined' && localStorage.getItem('ba-landing-lang')) || 'et',",

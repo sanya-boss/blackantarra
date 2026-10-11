@@ -597,7 +597,7 @@ class Component extends DCLogic {
       key: c.id + lang, name: c.name, breed: ({ ru: ['Ориентальный', 'Сиамский'], et: ['Idamaine', 'Siiami'], en: ['Oriental', 'Siamese'] }[lang] || [])[c.breed] || t.breeds[c.breed].name, photo: c.photo, alt: c.name, text: c.text ? boldNames(c.text[lang]) : undefined, focus: c.focus,
       placeholder: `${t.catPh}: ${c.name}`,
     })) : null;
-    const credit = React.createElement('a', { href: 'https://sanya-boss.github.io/cv.html', target: '_blank', rel: 'noopener', style: { color: 'inherit', textDecoration: 'none' } }, 'Designed by Mežennõi');
+    const credit = React.createElement('a', { href: 'https://sanya-boss.github.io/portfolio/', target: '_blank', rel: 'noopener', style: { color: 'inherit', textDecoration: 'none' } }, 'Designed by Mežennõi');
     return { credit, cats, catVp: this.catVpRef, catTrack: this.catTrack, catDown: this.catDown, catMove: this.catMove, catUp: this.catUp, catCancel: this.catCancel, catClick: this.catClick, catKey: this.catKey, catNoDrag: this.catNoDrag,
       catPrev: () => this.catGo(this.catI - 1), catNext: () => this.catGo(this.catI + 1), catAtStart: catI === 0, catAtEnd: catI === nCats - 1, catPrevOp: catI === 0 ? '.35' : '1', catNextOp: catI === nCats - 1 ? '.35' : '1',
       lang, t, links, social: SOCIAL, setLang: this.setLang, navigate: this.navigate,
