@@ -11,6 +11,7 @@ Output:
 
 Usage: python3 tools/build.py   (from anywhere; paths are repo-relative)
 """
+import json
 import pathlib
 import re
 import sys
@@ -61,6 +62,70 @@ FIXES = [
      "class Component extends DCLogic {"),
 ]
 
+SITE = "https://www.antarra.ee/"
+
+# Search-result title and description per language. The brand goes last so
+# Google keeps the descriptive part capitalised next to the site name.
+META = {
+    "et": ("Siiami ja orientaalsed kassid — kassila Black Antarra",
+           "Black Antarra on siiami ja orientaalsete kasside kodukassila Eestis. "
+           "Kasvataja Tatjana Raisp. Tutvuge meie kasside, tõugude ja kassipoja ostutingimustega."),
+    "en": ("Siamese & Oriental Cats — Black Antarra Cattery",
+           "Black Antarra is a home cattery of Siamese and Oriental cats in Estonia, run by "
+           "breeder Tatjana Raisp. Meet our cats, the breeds and the kitten purchase terms."),
+    "ru": ("Сиамские и ориентальные кошки — питомник Black Antarra",
+           "Black Antarra — домашний питомник сиамских и ориентальных кошек в Эстонии. "
+           "Заводчик Татьяна Райсп. Наши кошки, породы, галерея и условия покупки котёнка."),
+}
+OG_LOCALE = {"et": "et_EE", "en": "en_US", "ru": "ru_RU"}
+
+
+def page_url(lang):
+    return SITE if lang is None else f"{SITE}{lang}/"
+
+
+def apply_meta(html, lang):
+    """Static <head> tags for one page: `lang` is None for the root (ET content)."""
+    l = lang or "et"
+    title, desc = META[l]
+    t, d = html_escape(title), html_escape(desc)
+
+    def sub(pattern, repl):
+        nonlocal html
+        html, n = re.subn(pattern, lambda _: repl, html, count=1)
+        if not n:
+            print(f"WARNING: meta tag not found: {pattern}", file=sys.stderr)
+
+    sub(r"<title>.*?</title>", f"<title>{t}</title>")
+    sub(r'<meta name="description" content="[^"]*">', f'<meta name="description" content="{d}">')
+    sub(r'<meta property="og:title" content="[^"]*">', f'<meta property="og:title" content="{t}">')
+    sub(r'<meta property="og:description" content="[^"]*">', f'<meta property="og:description" content="{d}">')
+    sub(r'<meta property="og:image" content="[^"]*">', f'<meta property="og:image" content="{SITE}assets/icons/og-image.png">')
+    sub(r'<meta property="og:locale" content="[^"]*">', f'<meta property="og:locale" content="{OG_LOCALE[l]}">')
+    html = re.sub(r'\s*<meta property="og:locale:alternate" content="[^"]*">', "", html)
+    html = html.replace('"image":"assets/icons/og-image.png"', f'"image":"{SITE}assets/icons/og-image.png"')
+
+    links = [f'<link rel="canonical" href="{page_url(lang)}">',
+             f'<meta property="og:url" content="{page_url(lang)}">']
+    links += [f'<meta property="og:locale:alternate" content="{OG_LOCALE[o]}">' for o in LANGS if o != l]
+    links += [f'<link rel="alternate" hreflang="{o}" href="{page_url(o)}">' for o in LANGS]
+    links.append(f'<link rel="alternate" hreflang="x-default" href="{SITE}">')
+    links.append('<script type="application/ld+json">'
+                 + json.dumps({"@context": "https://schema.org", "@type": "WebSite",
+                               "name": "Black Antarra", "url": SITE}, ensure_ascii=False)
+                 + "</script>")
+    sub(r"(<title>)", "\n  ".join(links) + "\n  <title>")
+
+    # Titles the page sets at runtime when the language changes.
+    m = json.dumps({k: list(v) for k, v in META.items()}, ensure_ascii=False)
+    sub(r"const M = \{.*?\};", f"const M = {m};")
+    return html.replace("<html>", f'<html lang="{l}">', 1)
+
+
+def html_escape(s):
+    return s.replace("&", "&amp;").replace('"', "&quot;").replace("<", "&lt;")
+
+
 # Relative references to site files, prefixed with ../ for the language folders.
 REL_REF = re.compile(r"""(["'`(])(?:\./)?(assets/|_ds/|support\.js)""")
 
@@ -80,9 +145,9 @@ def main():
     for desc in missing:
         print(f"WARNING: fix not applied, text not found: {desc}", file=sys.stderr)
 
-    (ROOT / "index.html").write_text(html, encoding="utf-8")
+    (ROOT / "index.html").write_text(apply_meta(html, None), encoding="utf-8")
     for lang in LANGS:
-        page = REL_REF.sub(r"\1../\2", html).replace("<html>", f'<html lang="{lang}">', 1)
+        page = apply_meta(REL_REF.sub(r"\1../\2", html), lang)
         out = ROOT / lang / "index.html"
         out.parent.mkdir(exist_ok=True)
         out.write_text(page, encoding="utf-8")
