@@ -130,6 +130,35 @@ def html_escape(s):
 REL_REF = re.compile(r"""(["'`(])(?:\./)?(assets/|_ds/|support\.js)""")
 
 
+# Fonts: `optional` instead of `swap`, so text never re-renders in another font
+# after load. Preloading starts the downloads with the page itself, so the
+# fonts arrive within the browser's short block period and are used at once.
+DS = "_ds/black-antarra-design-system-1f78a416-c19d-47da-af39-d2a295e6cbe0"
+FONTS_CSS = ROOT / DS / "tokens" / "fonts.css"
+GOOGLE_FONTS = re.compile(r"https://fonts\.googleapis\.com/css2\?[^')\"]+")
+FONT_LINK = f'<link rel="stylesheet" href="{DS}/tokens/fonts.css">'
+PRELOAD_FONTS = ("Sentient-BoldItalic.woff2", "Sentient-MediumItalic.woff2")
+
+
+def fix_fonts_css():
+    css = FONTS_CSS.read_text(encoding="utf-8")
+    css = css.replace("display=swap", "display=optional").replace("font-display:swap", "font-display:optional")
+    FONTS_CSS.write_text(css, encoding="utf-8")
+    return GOOGLE_FONTS.search(css).group(0)
+
+
+def apply_font_preload(html, google_url):
+    tags = ['<link rel="preconnect" href="https://fonts.googleapis.com">',
+            '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>',
+            f'<link rel="preload" as="style" href="{html_escape(google_url)}">']
+    tags += [f'<link rel="preload" as="font" type="font/woff2" href="{DS}/assets/fonts/{f}" crossorigin>'
+             for f in PRELOAD_FONTS]
+    if FONT_LINK not in html:
+        print("WARNING: fonts.css link not found, fonts not preloaded", file=sys.stderr)
+        return html
+    return html.replace(FONT_LINK, "\n  ".join(tags) + "\n  " + FONT_LINK, 1)
+
+
 def apply_fixes(html):
     missing = []
     for desc, old, new in FIXES:
@@ -144,6 +173,8 @@ def main():
     html, missing = apply_fixes(SRC.read_text(encoding="utf-8"))
     for desc in missing:
         print(f"WARNING: fix not applied, text not found: {desc}", file=sys.stderr)
+    google_url = fix_fonts_css()
+    html = apply_font_preload(html, google_url)
 
     (ROOT / "index.html").write_text(apply_meta(html, None), encoding="utf-8")
     for lang in LANGS:
@@ -151,7 +182,8 @@ def main():
         out = ROOT / lang / "index.html"
         out.parent.mkdir(exist_ok=True)
         out.write_text(page, encoding="utf-8")
-    (ROOT / "404.html").write_text(SRC_404.read_text(encoding="utf-8"), encoding="utf-8")
+    (ROOT / "404.html").write_text(apply_font_preload(SRC_404.read_text(encoding="utf-8"), google_url),
+                                   encoding="utf-8")
 
     print("built: index.html, 404.html, " + ", ".join(f"{l}/index.html" for l in LANGS))
     return 1 if missing else 0
