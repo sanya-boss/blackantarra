@@ -21,6 +21,13 @@ SRC = ROOT / "Black Antarra Landing v2.dc.html"
 SRC_404 = ROOT / "404.dc.html"
 LANGS = ("et", "en", "ru")
 
+# No blue flash on tap (Android/iOS), no focus ring after a tap or click.
+TAP_CSS = ("html{-webkit-tap-highlight-color:transparent}"
+           "*{-webkit-tap-highlight-color:transparent}"
+           ":focus:not(:focus-visible){outline:none}"
+           # A quick double tap on the hero logo selected the image (blue box).
+           "[role=button],[role=button] *,button,.ba-logo,.ba-logo *,img{-webkit-user-select:none;user-select:none}")
+
 # Site-specific fixes on top of the export. Each is (description, old, new).
 # A fix whose `old` text is missing is reported, so a changed export is noticed.
 FIXES = [
@@ -60,6 +67,51 @@ FIXES = [
      "  try { history.replaceState(history.state, '', base.replace(/\\/?$/, '/') + lang + '/' + location.hash); } catch (e) {}\n"
      "}\n"
      "class Component extends DCLogic {"),
+    # Mobile hero logo: moved by transforms only (the export animates `left`,
+    # which re-lays out the page every frame and makes the logo jitter). The
+    # full-width wrapper shifts by half the row, the image back by half itself.
+    ("hero logo moves by transform only",
+     '<img loading="lazy" decoding="async" src="assets/logo/ba-logotype.svg" alt="Black Antarra — Siamese &amp; Oriental Cattery" width="235" height="46" style="position: relative; justify-self: start; left: {{ heroTxtLeft }}; transform: translateX({{ heroTxtShift }}); transition: left 1100ms cubic-bezier(.45,0,.2,1), transform 1100ms cubic-bezier(.45,0,.2,1); display: block; width: min(270px, 74vw); max-width: 100%; height: auto;">',
+     '<span style="justify-self: stretch; display: block; transform: translate3d({{ heroTxtLeft }},0,0); transition: transform 1100ms cubic-bezier(.45,0,.2,1); will-change: transform;">'
+     '<img decoding="async" src="assets/logo/ba-logotype.svg" alt="Black Antarra — Siamese &amp; Oriental Cattery" width="235" height="46" style="display: block; width: min(270px, 74vw); max-width: 100%; height: auto; transform: translate3d({{ heroTxtShift }},0,0); transition: transform 1100ms cubic-bezier(.45,0,.2,1); will-change: transform;">'
+     '</span>'),
+    # Smooth scrolling on phones. A blocking touchmove listener on the window
+    # makes the browser wait for script on every finger move, so scrolling
+    # can't run at the screen's refresh rate. It is needed only while the
+    # closed mobile hero swallows the first swipe; attach it just then.
+    ("touch gate listener only while needed (mount)",
+     "window.addEventListener('touchmove', this.onTouchMove, { passive: false }); this.onResize(); }",
+     "this.onResize(); this.syncGate(); }"),
+    ("touch gate listener only while needed (update)",
+     "componentDidUpdate(pp, ps) { if (ps.lang !== this.state.lang) this.applyMeta(); }",
+     # The runtime passes only prevProps, so the export's `ps.lang` threw on
+     # every update; compare with the last language applied instead.
+     "componentDidUpdate() { this.syncGate(); if (this.metaLang !== this.state.lang) { this.metaLang = this.state.lang; this.applyMeta(); } }\n"
+     "  syncGate = () => {\n"
+     "    const need = this.state.isMobile && (!this.state.heroOpen || (this.lockUntil && Date.now() < this.lockUntil));\n"
+     "    if (need === !!this.gateOn) return;\n"
+     "    this.gateOn = need;\n"
+     "    if (need) window.addEventListener('touchmove', this.onTouchMove, { passive: false });\n"
+     "    else window.removeEventListener('touchmove', this.onTouchMove);\n"
+     "  };"),
+    ("touch gate released after the swipe lock",
+     "this.lockUntil = now + 1200;",
+     "this.lockUntil = now + 1200; clearTimeout(this.gateT); this.gateT = setTimeout(this.syncGate, 1250);"),
+    # Scroll handler: once per frame, and no attribute write unless it changes.
+    ("scroll handler once per frame",
+     "onScroll = () => { this.heroPassed();",
+     "onScroll = () => { if (!this.scrollRaf) this.scrollRaf = requestAnimationFrame(this.onScrollFrame); };\n"
+     "  onScrollFrame = () => { this.scrollRaf = 0; this.heroPassed();"),
+    ("hero-passed flag written only on change",
+     "document.documentElement.dataset.heroPassed = passed ? '1' : '0'; };",
+     "const v = passed ? '1' : '0'; if (document.documentElement.dataset.heroPassed !== v) document.documentElement.dataset.heroPassed = v; };"),
+    # No blue tap flash on phones; a cheaper sticky header while scrolling
+    # (backdrop blur is re-rendered every scrolled frame on mobile GPUs).
+    ("no tap highlight, light mobile header",
+     "body{margin:0;background:var(--bg-canvas)}",
+     "body{margin:0;background:var(--bg-canvas)}" + TAP_CSS
+     + "@media (max-width:899px){.ba-header{backdrop-filter:none!important;-webkit-backdrop-filter:none!important;"
+       "background:color-mix(in oklch,var(--bg-canvas) 97%,transparent)!important}}"),
 ]
 
 SITE = "https://www.antarra.ee/"
@@ -182,8 +234,12 @@ def main():
         out = ROOT / lang / "index.html"
         out.parent.mkdir(exist_ok=True)
         out.write_text(page, encoding="utf-8")
-    (ROOT / "404.html").write_text(apply_font_preload(SRC_404.read_text(encoding="utf-8"), google_url),
-                                   encoding="utf-8")
+    page_404 = SRC_404.read_text(encoding="utf-8")
+    if "body{margin:0;background:var(--bg-canvas)}" not in page_404:
+        print("WARNING: 404 tap highlight fix not applied", file=sys.stderr)
+    page_404 = page_404.replace("body{margin:0;background:var(--bg-canvas)}",
+                                "body{margin:0;background:var(--bg-canvas)}" + TAP_CSS, 1)
+    (ROOT / "404.html").write_text(apply_font_preload(page_404, google_url), encoding="utf-8")
 
     print("built: index.html, 404.html, " + ", ".join(f"{l}/index.html" for l in LANGS))
     return 1 if missing else 0
