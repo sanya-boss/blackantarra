@@ -24,7 +24,9 @@ LANGS = ("et", "en", "ru")
 # No blue flash on tap (Android/iOS), no focus ring after a tap or click.
 TAP_CSS = ("html{-webkit-tap-highlight-color:transparent}"
            "*{-webkit-tap-highlight-color:transparent}"
-           ":focus:not(:focus-visible){outline:none}")
+           ":focus:not(:focus-visible){outline:none}"
+           # A quick double tap on the hero logo selected the image (blue box).
+           "[role=button],[role=button] *,button,.ba-logo,.ba-logo *,img{-webkit-user-select:none;user-select:none}")
 
 # Site-specific fixes on top of the export. Each is (description, old, new).
 # A fix whose `old` text is missing is reported, so a changed export is noticed.
